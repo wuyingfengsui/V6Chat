@@ -1,0 +1,6 @@
+<XLUE>
+<resource>
+    <bitmap id="begin.photo_frame"  path="bitmap\photo_frame.png" />
+	<bitmap id="begin.butterfly"  path="bitmap\butterfly.png" />
+</resource>
+</XLUE>

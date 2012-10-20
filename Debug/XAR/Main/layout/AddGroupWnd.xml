@@ -1,0 +1,102 @@
+<!--XML最好存储为UTF-8编码-->
+<xlue>
+    <objtreetemplate id="AddGroup.Tree">
+        <attr>
+			<left>-200</left>
+			<top>-200</top>
+			<width>2000</width>
+			<height>2000</height>
+	    </attr>
+		    <obj id="bkg" class="TextureObject">
+			<attr>
+				<left>0</left>
+				<top>0</top>
+				<width>205</width>
+				<height>126</height>
+				<texture>texture.AddGroupWnd.bkg.border</texture>
+			</attr>
+			<children>
+			    <obj id="small_map" class="FillObject">
+					<attr>
+						<left>5</left>
+				        <top>5</top>
+						<width>father.width - 10</width>
+				        <height>father.height - 10</height>
+				        <srccolor>system.white</srccolor>
+				        <srcpt>102,63</srcpt>
+				        <destcolor>main.tips.bkg</destcolor>
+				        <destpt>0,0</destpt>
+				        <filltype>Circle</filltype>
+				        <alpha>255</alpha>
+				        <blendtype>Source</blendtype>
+					</attr>
+					<children>
+				        <obj id="title" class="CaptionObject">
+			                <attr>
+				                <left>0</left>
+			                    <top>0</top>
+			                    <width>father.width</width>
+			                    <height>father.height</height>
+				            </attr>
+			            </obj>
+						<obj id="group_name" class="Util.text_edit">
+			                <attr>
+					            <left>(father.width-140)/2</left>
+					            <top>father.height/2-25</top>
+					            <width>140</width>
+					            <height>25</height>
+					            <Text>分组名：</Text>
+					            <TextWidth>55</TextWidth>
+					            <TextColorResId>system.lightblue</TextColorResId>
+				            </attr>
+			            </obj>
+						<obj id="OK_button" class="Util.gradual_button">
+				            <attr>
+					            <left>(father.width-120)/2</left>
+					            <top>father.height/2+20</top>
+					            <width>50</width>
+					            <height>20</height>
+					            <NormalBkgID>app.button.normal</NormalBkgID>
+					            <Text>确定</Text>
+								<FontID>font.category.item.small</FontID>
+				            </attr>
+				            <eventlist>
+					            <event name="OnClick" file="AddGroupWnd.xml.lua" func="OK_btn_OnClick"/>
+				            </eventlist>
+			            </obj>
+						<obj id="Cancel_button" class="Util.gradual_button">
+				            <attr>
+					            <left>father.width-90</left>
+					            <top>father.height/2+20</top>
+					            <width>50</width>
+					            <height>20</height>
+					            <NormalBkgID>app.button.normal</NormalBkgID>
+					            <Text>取消</Text>
+								<FontID>font.category.item.small</FontID>
+				            </attr>
+				            <eventlist>
+					            <event name="OnClick" file="AddGroupWnd.xml.lua" func="Cancel_btn_OnClick"/>
+				            </eventlist>
+			            </obj>
+				    </children>
+				</obj>
+			</children>
+			</obj>
+    </objtreetemplate>
+	
+	<hostwndtemplate id="AddGroup.Wnd" class="ModalHostWnd">
+		<attr>
+			<topmost>1</topmost>
+			<title>AddGroup</title>
+			<layered>1</layered>
+			<left>0</left> 
+			<top>0</top>
+			<width>205</width>
+			<height>126</height>
+		</attr>
+		<eventlist>
+		    <event name="OnShowWindow" file="AddGroupWnd.xml.lua" func="OnShowWindow" />
+			<event name="OnFocusChange" file="AddGroupWnd.xml.lua" func="OnFocusChange" />
+	    </eventlist>
+</hostwndtemplate>
+</xlue>

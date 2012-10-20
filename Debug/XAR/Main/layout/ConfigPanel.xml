@@ -1,0 +1,43 @@
+<!--XML最好存储为UTF-8编码-->
+<xlue>
+    <objtreetemplate id="Main.Tabs.Config">
+	    <attr>
+		    <left>-200</left>
+			<top>-200</top>
+			<width>2000</width>
+			<height>2000</height>
+		</attr>
+		<obj id="white_bkg" class="FillObject">
+			<attr>
+				<width>280</width>
+				<height>300</height>
+				<srccolor>main.tree.bkg</srccolor>
+				<filltype>Monochrome</filltype>
+				<alpha>255</alpha>
+				<blendtype>Source</blendtype>
+			</attr>
+			<children>
+			    <obj id="add_friend_btn" class="Util.float_button">
+			        <attr>
+				        <left>20</left>
+				        <top>15</top>
+				        <width>64</width>
+				        <height>64</height>
+					    <BkgID>main.config.add_friend</BkgID>
+					    <FloatValue>4</FloatValue>
+			        </attr>
+				    <eventlist>
+					    <event name="OnClick" file="ConfigPanel.xml.lua" func="add_friend_btn_OnClick"/>
+				    </eventlist>
+			    </obj>
+			</children>
+		</obj>
+	</objtreetemplate>
+	
+	<hostwndtemplate id="Main.Tabs.ConfigWnd" class="FrameHostWnd" >
+        <attr>
+			<width>280</width>
+            <height>300</height>
+        </attr>
+    </hostwndtemplate>
+</xlue>

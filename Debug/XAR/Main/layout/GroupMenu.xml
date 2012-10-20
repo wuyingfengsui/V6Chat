@@ -1,0 +1,66 @@
+<xlue>
+    <objtreetemplate id="GroupMenu.Tree">
+		<attr>
+			<left>-1000</left>
+			<top>-1000</top>
+			<width>2000</width>
+			<height>2000</height>
+		</attr>
+		<obj id="root" class="LayoutObject">
+			<attr>
+				<left>0</left>
+				<top>0</top>
+				<width>100</width>
+				<height>50</height>
+			</attr>
+			<children>
+				<obj id="bkg" class="TextureObject">
+					<attr>
+						<left>0</left>
+						<top>0</top>
+						<width>father.width</width>
+						<height>father.height</height>
+						<texture>texture.MainMenu.bkg</texture>
+					</attr>
+					<children>
+						<obj id="item.Delete" class="Util.Menu.Item">
+							<attr>
+								<left>0</left>
+								<top>0</top>
+								<width>father.width</width>
+								<height>20</height>
+								<Text>删除该分组</Text>
+							</attr>
+							<eventlist>
+								<event name="OnSelected" file="GroupMenu.xml.lua" func="GroupMenu_item_Delete_OnSelected"/>
+							</eventlist>
+						</obj>
+						<obj id="item.Add" class="Util.Menu.Item">
+							<attr>
+								<left>0</left>
+								<top>21</top>
+								<width>father.width</width>
+								<height>20</height>
+								<Text>添加分组</Text>
+							</attr>
+							<eventlist>
+								<event name="OnSelected" file="GroupMenu.xml.lua" func="GroupMenu_item_Add_OnSelected"/>
+							</eventlist>
+						</obj>
+					</children>
+				</obj>
+			</children>
+			<eventlist>
+				<event name="OnInitControl" file="GroupMenu.xml.lua" func="GroupMenu_OnInitControl"/>
+			</eventlist>
+		</obj>
+	</objtreetemplate>
+	
+	<hostwndtemplate id="GroupMenu.Wnd" class="MenuHostWnd">
+		<attr>
+		</attr>
+		<eventlist>
+			<event name="OnPopupMenu" file="GroupMenu.xml.lua" func="OnPopupMenu" />
+		</eventlist>
+	</hostwndtemplate>
+</xlue>

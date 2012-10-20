@@ -1,0 +1,45 @@
+<!--XML最好存储为UTF-8编码-->
+<xlue>
+	<control class="Util.Radio">
+		<attr_def>
+			<attr name="NowState" type="int">
+				<default>0</default>
+			</attr>
+			<attr name="Text" type="string" />
+		</attr_def>
+		<method_def>
+			<SetState file="Radio.lua" func="SetState"/>
+			<GetState file="Radio.lua" func="GetState"/>
+			<SetText file="Radio.lua" func="SetText"/>
+		</method_def>
+		<event_def>
+			<OnClick />
+		</event_def>
+		<objtemplate>
+		<children>
+		    <obj id="radio" class="ImageObject">
+			    <attr>
+			        <top>3</top>
+					<left>0</left>
+				    <width>10</width>
+				    <height>13</height>
+					<image>bitmap.radio.normal</image>
+				</attr>
+			</obj>
+			<obj id="text" class="TextObject">
+				<attr>
+					<left>14</left>
+					<width>father.width-14</width>
+					<height>father.height</height>
+					<effect>bright</effect>
+				</attr>
+			</obj>
+		</children>
+		<eventlist>
+			<event name="OnLButtonDown" file="Radio.lua" func="OnLButtonDown" />
+		    <event name="OnMouseMove" file="Radio.lua" func="OnMouseMove" />	
+		    <event name="OnMouseLeave" file="Radio.lua" func="OnMouseLeave" />
+		</eventlist>
+		</objtemplate>
+	</control>
+</xlue>

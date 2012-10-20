@@ -1,0 +1,23 @@
+EXPORTS
+	multicast_string
+	build_multicast_listener
+	send_udp_string
+	send_udp_string_by_socket
+	build_udp_listener
+	send_tcp_string
+	async_send_tcp_string
+	build_tcp_listener
+	send_small_file_by_tcp_socket
+	send_tcp_string_without_closesocket
+	receive_small_file_by_tcp_socket
+	send_binary_data
+	receive_binary_data
+	get_file_by_http
+
+	get_local_ip
+	get_socket_family
+	get_socket_address
+
+	release_socket
+	release_socket_data
+	release_socket_array_data

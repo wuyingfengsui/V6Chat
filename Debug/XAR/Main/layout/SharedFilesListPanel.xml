@@ -1,0 +1,58 @@
+<!--XML最好存储为UTF-8编码-->
+<xlue>
+    <objtreetemplate id="Main.Tabs.SharedFilesList">
+	    <attr>
+		    <left>-200</left>
+			<top>-200</top>
+			<width>2000</width>
+			<height>2000</height>
+		</attr>
+		<obj id="small_map" class="FillObject">
+			<attr>
+				<width>280</width>
+				<height>300</height>
+				<srccolor>main.tree.bkg</srccolor>
+				<filltype>Monochrome</filltype>
+				<alpha>255</alpha>
+				<blendtype>Source</blendtype>
+			</attr>
+			<children>
+			    <obj id="share_file" class="Thunder.Button">
+					<attr>
+						<left>(father.width - 40)/2</left>
+						<top>3</top>
+						<width>38</width>
+						<height>42</height>
+						<HoverBkgID>main.file.share.normal</HoverBkgID>
+						<NormalBkgID>main.file.share.disable</NormalBkgID>
+						<DownBkgID>main.file.share.normal</DownBkgID>
+						<Enable>true</Enable>
+					</attr>
+				    <eventlist>
+				    </eventlist>
+			    </obj>
+				<obj id="list" class="ShareFilesListCtrl">
+					<attr>
+						<left>0</left>
+						<top>45</top>
+						<width>father.width</width>
+						<height>father.height- 45</height>
+					</attr>
+					<eventlist>
+					    <event name="OnInitControl" file="SharedFilesListPanel.xml.lua" func="list_OnInitControl" />
+						<event name="OnSelected" file="SharedFilesListPanel.xml.lua" func="list_OnSelected" />
+						<event name="OnPopupItemMenu" file="SharedFilesListPanel.xml.lua" func="list_OnPopupItemMenu" />
+					</eventlist>
+				</obj>
+			</children>
+		</obj>
+	</objtreetemplate>
+	
+	<hostwndtemplate id="Main.Tabs.SharedFilesListWnd" class="FrameHostWnd" >
+        <attr>
+            <width>280</width>
+            <height>300</height>
+			<layered>0</layered>
+        </attr>
+    </hostwndtemplate>
+</xlue>

@@ -1,0 +1,75 @@
+<xlue>
+	<control class="Util.Menu.Item">
+		<attr_def>
+			<attr name="SubMenuTemplate" type="string"/>
+			<attr name="Text" type="string"/>
+		</attr_def>
+		<method_def>
+			<SetContainer file="MenuItem.lua" func="Menu_Item_SetContainer"/>
+			<PopupSubMenu file="MenuItem.lua" func="Menu_Item_PopupSubMenu"/>
+			<DestroySubMenu file="MenuItem.lua" func="Menu_Item_DestroySubMenu"/>
+			<SetEntered file="MenuItem.lua" func="Menu_Item_SetEntered"/>
+			<SetText file="MenuItem.lua" func="Menu_Item_SetText"/>
+			<GetText file="MenuItem.lua" func="Menu_Item_GetText"/>
+		</method_def>
+		<event_def>
+			<OnSelected />
+		</event_def>
+		<objtemplate>
+			<children>
+				<obj id="root" class="LayoutObject">
+					<attr>
+						<left>0</left>
+						<top>0</top>
+						<width>father.width</width>
+						<height>father.height</height>
+					</attr>
+					<children>
+						<obj id="hoverBkg" class="FillObject">
+							<attr>
+								<visible>false</visible>
+								<left>3</left>
+								<top>3</top>
+								<width>father.width - 6</width>
+								<height>father.height</height>
+								<destpt>father.width - 6, father.height</destpt>
+								<filltype>Monochrome</filltype>
+								<srccolor>system.orange</srccolor>
+					            <destcolor>system.orange</destcolor>
+					            <alpha>255</alpha>
+					            <blendtype>Source</blendtype>
+							</attr>
+							<children>
+								<obj id="tosub" class="ImageObject">
+									<attr>
+										<left>father.width - 15</left>
+										<top>7</top>
+										<width>9</width>
+										<height>9</height>
+										<visible>false</visible>
+										<image>bitmap.right.triangle</image>
+									</attr>
+								</obj>
+								<obj id="text" class="TextObject">
+									<attr>
+										<left>10</left>
+										<top>3</top>
+										<width>father.width - 15</width>
+										<height>father.height - 6</height>
+									</attr>
+								</obj>
+							</children>
+						</obj>
+					</children>
+				</obj>
+			</children>
+			<eventlist>
+				<event name="OnMouseEnter" file="MenuItem.lua" func="Menu_Item_OnMouseEnter"/>
+				<event name="OnMouseMove" file="MenuItem.lua" func="Menu_Item_OnMouseMove"/>
+				<event name="OnMouseLeave" file="MenuItem.lua" func="Menu_Item_OnMouseLeave"/>
+				<event name="OnLButtonDown" file="MenuItem.lua" func="Menu_Item_OnLButtonDown"/>
+				<event name="OnInitControl" file="MenuItem.lua" func="Menu_Item_OnInitControl"/>
+			</eventlist>
+		</objtemplate>
+	</control>
+</xlue>

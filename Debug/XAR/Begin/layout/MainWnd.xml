@@ -1,0 +1,164 @@
+<!--XML最好存储为UTF-8编码-->
+<xlue>
+
+<objtreetemplate id="Begin.Tree">
+	<attr>
+			<left>-200</left>
+			<top>-200</top>
+			<width>2000</width>
+			<height>2000</height>
+	</attr>
+
+	<obj id="app.bkg" class="ImageObject">
+		<attr>
+			<left>0</left>
+			<top>0</top>
+			<width>315</width>
+			<height>516</height>
+			<!--资源相关的属性使用资源定义xml中设置的资源名-->
+			<image>app.bkg</image>
+			<alpha>255</alpha>
+			<!--设置成拉伸模式,ImageObject默认是不会拉伸其对应的位图的-->
+			<drawmode>1</drawmode>
+		</attr>
+		
+		<children>
+		    <obj id="title" class="CaptionObject">
+			    <attr>
+				    <left>0</left>
+			        <top>0</top>
+			        <width>father.width</width>
+			        <height>father.height</height>
+				</attr>
+			</obj>
+	        <obj id="close_button" class="Util.float_button">
+			    <attr type="int" name="NowState"/>
+				<attr>
+					<left>father.width-50</left>
+					<top>0</top>
+					<width>24</width>
+					<height>24</height>
+					<zorder>1</zorder>
+					<BkgID>app.close</BkgID>
+					<FloatValue>2</FloatValue>
+				</attr>
+				<eventlist>
+					<event name="OnClick" file="MainWnd.xml.lua" func="close_btn_OnClick"/>
+				</eventlist>
+		    </obj>
+			<obj id="photo" class="LayoutObject">
+			    <attr>
+					<left>(father.width-110)/2</left>
+			        <top>75</top>
+			        <width>120</width>
+			        <height>140</height>
+				</attr>
+				<children>
+				    <obj id="my_photo" class="ImageObject">
+			            <attr>
+					        <left>5</left>
+			                <top>20</top>
+			                <width>80</width>
+			                <height>100</height>
+			                <alpha>255</alpha>
+							<zorder>1</zorder>
+							<drawmode>1</drawmode>
+				        </attr>
+			        </obj>
+					<obj id="photo_frame" class="ImageObject">
+			            <attr>
+					        <left>0</left>
+			                <top>0</top>
+			                <width>father.width</width>
+			                <height>father.height</height>
+			                <image>begin.photo_frame</image>
+			                <alpha>255</alpha>
+							<zorder>2</zorder>
+				        </attr>
+			        </obj>
+				</children>
+				<eventlist>
+				    <event name="OnBind" file="MainWnd.xml.lua" func="photo_OnBind" />
+					<event name="OnMouseMove" file="MainWnd.xml.lua" func="photo_OnMouseMove" />
+					<event name="OnMouseLeave" file="MainWnd.xml.lua" func="photo_OnMouseLeave" />
+					<event name="OnLButtonDown" file="MainWnd.xml.lua" func="photo_OnLButtonDown" />
+	            </eventlist>
+			</obj>
+			<obj id="nick_name" class="Util.text_edit">
+			    <attr>
+					<taborder>0</taborder>
+					<left>(father.width-240)/2</left>
+					<top>father.height/2-25</top>
+					<width>240</width>
+					<height>25</height>
+					<Text>昵称：</Text>
+					<TextWidth>40</TextWidth>
+					<TextColorResId>system.lightblue</TextColorResId>
+				</attr>
+				<eventlist>
+					<event name="OnTextChanged" file="MainWnd.xml.lua" func="nick_name_OnTextChanged" />
+					<event name="OnBind" file="MainWnd.xml.lua" func="nick_name_OnBind" />
+	            </eventlist>
+			</obj>
+			<obj id="more_profile" class="TextObject">
+				<attr>
+					<left>father.width-60</left>
+					<top>father.height/2+10</top>
+					<width>40</width>
+					<height>25</height>
+					<text>更多</text>
+				</attr>
+				<eventlist>
+				    <event name="OnMouseMove" file="MainWnd.xml.lua" func="more_profile_OnMouseMove" />
+					<event name="OnMouseLeave" file="MainWnd.xml.lua" func="more_profile_OnMouseLeave" />
+					<event name="OnLButtonDown" file="MainWnd.xml.lua" func="more_profile_OnLButtonDown" />
+	            </eventlist>
+			</obj>
+			<obj id="begin_button" class="Util.gradual_button">
+				<attr>
+					<left>(father.width-95)/2</left>
+					<top>father.height/2+33</top>
+					<width>95</width>
+					<height>33</height>
+					<NormalBkgID>app.button.normal</NormalBkgID>
+					<Text>开始</Text>
+				</attr>
+				<eventlist>
+					<event name="OnClick" file="MainWnd.xml.lua" func="begin_btn_OnClick"/>
+				</eventlist>
+			</obj>
+			<obj id="small_map" class="ImageObject">
+			    <attr>
+					<left>father.width-140</left>
+			        <top>father.height-135</top>
+			        <width>128</width>
+			        <height>128</height>
+			        <image>begin.butterfly</image>
+			        <alpha>255</alpha>
+				</attr>
+			</obj>
+	    </children>
+	</obj>
+</objtreetemplate>
+	
+<hostwndtemplate id="Begin.Wnd" class="FrameHostWnd">
+		<attr> 
+			<mainwnd>1</mainwnd>
+			<appwindow>1</appwindow>
+			<title>V6Chat</title>
+			<layered>1</layered>
+			<left>200</left> 
+			<top>100</top>
+			<!--注意这是容器窗口的大小，设置的要合理-->
+			<width>315</width>
+			<height>516</height>
+			<tabstop>1</tabstop>
+		</attr>
+		<eventlist>
+		    <event name="OnCreate" file="MainWnd.xml.lua" func="OnCreate" />
+			<event name="OnDestroy" file="MainWnd.xml.lua" func="OnDestroy" />
+			<event name="OnShowWindow" file="MainWnd.xml.lua" func="OnShowWindow" />
+			<event name="OnFocusChange" file="MainWnd.xml.lua" func="OnFocusChange" />
+	    </eventlist>
+</hostwndtemplate>
+</xlue>

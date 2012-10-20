@@ -1,0 +1,70 @@
+﻿<XLUE>
+<resource>
+	<!--普通的位图资源-->
+	<bitmap id="app.bkg"  path="bitmap\bkg.png" />
+	<bitmap id="app.close"  path="bitmap\close.png" />
+	<bitmap id="app.min"  path="bitmap\min.png" />
+	<bitmap id="app.unknown_photo"  path="bitmap\unknown_photo.png" />
+	<bitmap id="app.userimage.frame" path="bitmap\promo.vipconfig.userimage.frame.png"/>
+	<bitmap id="app.userimage.frame.highlight" path="bitmap\promo.vipconfig.userimage.frame.highlight.png"/>
+	
+	<imagelist id="bitmap.triangles" image="bitmap\triangles.png" varyblock="1" splitter="1" vertical="0"/> 
+	    <bitmap id="bitmap.right.triangle" index="1" imagelist="bitmap.triangles"/>
+	
+	<imagelist id="imagelist.category" splitter="1" vertical="0" varyblock="1" image="bitmap\imagelist.category.png"/>
+		<bitmap id="bitmap.category.item.all"  imagelist="imagelist.category" index="1"/>  
+		<bitmap id="bitmap.category.item.downloading"  imagelist="imagelist.category" index="2"/>  
+		<bitmap id="bitmap.category.item.complete"  imagelist="imagelist.category" index="3"/>  
+		<bitmap id="bitmap.category.item.collection"  imagelist="imagelist.category" index="4"/>  
+		<bitmap id="bitmap.category.item.recycle"  imagelist="imagelist.category" index="5"/>  
+		<bitmap id="bitmap.categorytree.expand" imagelist="imagelist.category" index="6"/>  
+		<bitmap id="bitmap.categorytree.collapse" imagelist="imagelist.category" index="7"/>  
+	
+	<imagelist image="bitmap\mainwnd_share_hover.png" id="plugin.item.list" splitter="1" varyblock="1" vertical="0"/>
+	    <bitmap id="plugin.item.close.normal" imagelist="plugin.item.list" index="3"/>
+        <bitmap id="plugin.item.close.hover" imagelist="plugin.item.list" index="4"/>
+        <bitmap id="plugin.item.close.down" imagelist="plugin.item.list" index="5"/>
+        <texture id="item.bkg.hover" type="ThreeInOneH" imagelist="plugin.item.list" index="1"/>
+        <texture id="item.bkg.down" type="ThreeInOneH" imagelist="plugin.item.list" index="2"/>
+		<texture id="texture.category.item.select" type="i.	Stretch" imagelist="plugin.item.list" index="10" />
+		<texture id="texture.category.item.hover" type="ThreeInOneH" imagelist="plugin.item.list" index="12" />
+        <bitmap id="plugin.addplugin.btn" imagelist="plugin.item.list" index="13"/>
+        <texture id="addplugin.btn.hover" type="ThreeInOneH" imagelist="plugin.item.list" index="14"/>
+        <texture id="addplugin.btn.down" type="ThreeInOneH" imagelist="plugin.item.list" index="15"/>
+		
+	<imagelist id="imagelist.newtask.edit" vertical="0" splitter="1" varyblock="1" image="bitmap\imagelist.newtask.edit.png"/>
+        <bitmap id="bitmap.url.icon" imagelist="imagelist.newtask.edit" index="1"/>
+        <bitmap id="bitmap.filename.icon" imagelist="imagelist.newtask.edit" index="2"/>
+        <bitmap id="bitmap.path.icon" imagelist="imagelist.newtask.edit" index="3"/>
+        <texture id="texture.combobtn.normal" imagelist="imagelist.newtask.edit" index="4"/>
+        <texture id="texture.combobtn.hover" imagelist="imagelist.newtask.edit" index="5"/>
+        <texture id="texture.combobtn.down" imagelist="imagelist.newtask.edit" index="6"/>
+        <texture id="texture.edit.bkg.disable" type="NineInOne" imagelist="imagelist.newtask.edit" index="10"/>
+        <texture id="texture.edit.bkg.normal" type="NineInOne" imagelist="imagelist.newtask.edit" index="11"/>
+        <texture id="texture.edit.bkg.hover" type="NineInOne" imagelist="imagelist.newtask.edit" index="12"/>
+	
+	<imagelist id="imagelist.btn" vertical="0" splitter="1" varyblock="0" blocksize="21" image="bitmap\basicinfo.button.png"/>
+	    <texture id="app.button.normal"  type="NineInOne" image="bitmap\btn_login_nor.png"/>
+	    <texture id="app.button.hover" type="NineInOne" image="bitmap\btn_login_hover.png"/>
+		<texture id="app.button.down" type="NineInOne" image="bitmap\btn_login_down.png"/>
+		<texture id="app.button.disable" type = "NineInOne" imagelist="imagelist.btn" index="4"/>
+		
+	<imagelist id="bitmap.radio" image="bitmap\bitmap.task.block.png" varyblock="1" splitter="1" vertical="0"/> 
+	    <bitmap id="bitmap.radio.checked" index="1" imagelist="bitmap.radio"/>
+		<bitmap id="bitmap.radio.normal" index="2" imagelist="bitmap.radio"/>
+		
+	<!--纹理贴图资源 -->
+	<!-- 纹理的类型有 
+	：
+	Stretch,Normal,Tile   拉伸，不拉伸，平铺
+	NineInOne,ThreeInOneH,ThreeInOneV,FiveInOneH,FiveInOneV,  迅雷传统用的固定区域映射
+	以及自定义映射   
+
+	通过定义这些类型，可以方便的让位图按预期意图进行拉伸，同时也方便设计师的工作
+	-->
+	<texture id="app.edit.bkg" type="Stretch" image="bitmap\edit_bkg.png"/>
+	<texture id="app.messagebox.bkg" type="ThreeInOneH" image="bitmap\msgbox_bkg.png"/>
+	<texture id="texture.MainMenu.bkg" type="NineInOne" image="bitmap\mainmenu.bkg.png"/>
+	<texture id="texture.AddGroupWnd.bkg.border" type="NineInOne" image="bitmap\mainwnd.bkg.border.png"/>
+</resource>
+</XLUE>

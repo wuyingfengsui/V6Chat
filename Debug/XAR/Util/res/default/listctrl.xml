@@ -1,0 +1,16 @@
+<XLUE>
+	<resource>
+		<imagelist id="ListCtrl.Header.Image" vertical="0" splitter="1" varyblock="1" image="bitmap\listheader.png"/>
+		<bitmap id="ListCtrl.Header.SortBmp.down" imagelist="ListCtrl.Header.Image" index="3"/>
+		<bitmap id="ListCtrl.Header.SortBmp.up" imagelist="ListCtrl.Header.Image" index="4"/>
+		<bitmap id="bitmap.listctrl.header.bkg"  path="bitmap\list_header_bkg.png"/>
+		<bitmap id="ListCtrl.HeaderItem.Normal" path="bitmap\list_header_item.png"/>  
+		<bitmap id="ListCtrl.HeaderItem.Down" path="bitmap\list_header_item.png"/>
+		<bitmap id="ListCtrl.HeaderItem.Hover" path="bitmap\list_header_item.png"/>
+		
+		<texture id="texture.tasklist.item.bk" type="NineInOne" image="bitmap\task_item_bk.png" />
+		<texture id="texture.tasklist.select_item.bk" type="NineInOne" image="bitmap\task_select_item_bk.png"/>
+	</resource>
+</XLUE>
+
+

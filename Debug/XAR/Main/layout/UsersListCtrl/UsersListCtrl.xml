@@ -1,0 +1,163 @@
+<xlue>
+	<control class="UsersListCtrl">
+		<method_def>
+			<SetSel file="UsersListCtrl.xml.lua" func="List_SetSel" />
+			<GetSel file="UsersListCtrl.xml.lua" func="List_GetSel" />
+			<InsertItem file="UsersListCtrl.xml.lua" func="InsertItem" />
+			<ShowText file="UsersListCtrl.xml.lua" func="ShowText" />
+			<DeleteAllItems file="UsersListCtrl.xml.lua" func="DeleteAllItems" />
+			<DeleteItem file="UsersListCtrl.xml.lua" func="DeleteItem" />
+			<SetAdjust file="UsersListCtrl.xml.lua" func="SetAdjust" />
+			<MouseWheel file="UsersListCtrl.xml.lua" func="MouseWheel" />
+			<UpdateScroll file="UsersListCtrl.xml.lua" func="UpdateScroll" />
+		</method_def>
+		<event_def>
+		    <OnAddUser>
+				<param>
+					<int/>
+					<int/>
+					<string/>
+				</param>
+			</OnAddUser>
+		</event_def>
+		<objtemplate>
+            <children>
+				<obj id="list.bkg" class="TextureObject">
+                    <attr>
+                        <left>0</left>
+                        <top>0</top>
+                        <width>father.width</width>
+                        <height>father.height</height>
+                        <texture>texture.edit.bkg.normal</texture>
+						<zorder>1</zorder>
+                    </attr>
+					<children>
+						<obj id="content" class="LayoutObject">
+							<attr>
+								<left>3</left>
+								<top>3</top>
+								<width>father.width-6</width>
+								<height>father.height-6</height>
+								<limitchild>1</limitchild>
+							</attr>	
+							<eventlist>
+								<event name="OnMouseWheel" file="UsersListCtrl.xml.lua" func="OnMouseWheel" />
+							</eventlist>
+						</obj>
+						<obj id="vscroll" class="Thunder.ScrollBar">
+							<attr>
+								<left>father.width - 26</left>
+								<top>3</top>
+								<width>25</width>
+								<height>father.height-6</height>
+								<Type>1</Type>
+								<ThumbBtn_normal>texture.vsb.small.thumb.normal</ThumbBtn_normal>
+								<ThumbBtn_hover>texture.vsb.small.thumb.hover</ThumbBtn_hover>
+								<ThumbBtn_down>texture.vsb.small.thumb.down</ThumbBtn_down>
+								<LeftBtn_normal>texture.vsb.leftbtn.normal</LeftBtn_normal>
+								<LeftBtn_hover>texture.vsb.leftbtn.hover</LeftBtn_hover>
+								<LeftBtn_down>texture.vsb.leftbtn.down</LeftBtn_down>
+								<RightBtn_normal>texture.vsb.rightbtn.normal</RightBtn_normal>
+								<RightBtn_hover>texture.vsb.rightbtn.hover</RightBtn_hover>
+								<RightBtn_down>texture.vsb.rightbtn.down</RightBtn_down>
+								<SideBtnLength>12</SideBtnLength>
+
+								<PageSize>0</PageSize>
+								<RangeBegin>0</RangeBegin>
+								<RangeEnd>0</RangeEnd>
+								<ScrollPos>0</ScrollPos>
+								<zorder>100000</zorder>
+							</attr>
+							<eventlist>
+								<event name="OnVScroll" file="UsersListCtrl.xml.lua" func="OnVScroll" />
+								<event name="OnScrollBarMouseWheel" file="UsersListCtrl.xml.lua" func="OnScrollBarMouseWheel" />								
+							</eventlist>
+						</obj>
+					</children>
+				</obj>				
+			</children>
+			<eventlist>
+				<event name="OnBind" file="UsersListCtrl.xml.lua" func="OnBind" />
+				<event name="OnInitControl" file="UsersListCtrl.xml.lua" func="List_OnInitControl" />
+				<event name="OnPosChange" file="UsersListCtrl.xml.lua" func="OnPosChange" />
+			</eventlist>
+		</objtemplate>
+	</control>
+	<control class="UsersListItem">
+		<attr_def>
+			<attr name="sid" type="int" />
+			<attr name="id" type="int" />
+			<attr name="account" type="string" />
+			<attr name="nick_name" type="string" />
+		</attr_def>
+		<method_def>
+			<SetSel file="UsersListCtrl.xml.lua" func="SetSel" />
+		</method_def>
+		<objtemplate>
+			<children>
+				<obj id="item" class="LayoutObject">
+					<attr>
+						<left>0</left>
+						<top>0</top>
+						<width>father.width - 10</width>
+						<height>70</height>
+					</attr>
+					<children>
+						<obj id="background" class="TextureObject">
+							<attr>
+								<left>0</left>
+								<top>0</top>
+								<width>father.width</width>
+								<height>father.height</height>
+								<texture>texture.tasklist.item.bk</texture>
+							</attr>
+							<children>
+								<obj id="head" class="ImageObject">
+			                        <attr>
+			                            <left>5</left>
+										<top>10</top>
+				                        <width>40</width>
+				                        <height>50</height>
+										<image>app.unknown_photo</image>
+										<drawmode>1</drawmode>
+				                    </attr>
+			                    </obj>
+								<obj id="nick_name" class="TextObject">
+									<attr>
+										<left>90</left>
+										<top>10</top>
+										<width>father.width-120</width>
+										<height>24</height>
+										<valign>center</valign>
+									</attr>
+								</obj>
+								<obj id="addUser_button" class="Util.gradual_button">
+									<attr>
+										<left>450</left>
+										<top>23</top>
+										<width>50</width>
+										<height>25</height>
+										<NormalBkgID>app.button.normal</NormalBkgID>
+										<Text>添加</Text>
+										<FontID>font.category.item.normal</FontID>
+										<Visible>false</Visible>
+									</attr>
+									<eventlist>
+										<event name="OnClick" file="UsersListCtrl.xml.lua" func="addUser_btn_OnClick"/>
+									</eventlist>
+								</obj>
+							</children>
+						</obj>						
+					</children>
+				</obj>
+			</children>
+			<eventlist>
+				<event name="OnInitControl" file="UsersListCtrl.xml.lua" func="OnInitControl" />
+				<event name="OnMouseEnter" file="UsersListCtrl.xml.lua" func="OnMouseEnter" />
+				<event name="OnLButtonDown" file="UsersListCtrl.xml.lua" func="OnLButtonDown" />
+				<event name="OnLButtonDbClick" file="UsersListCtrl.xml.lua" func="OnLButtonDbClick" />
+				<event name="OnMouseWheel" file="UsersListCtrl.xml.lua" func="OnMouseWheel_Item" />
+			</eventlist>
+		</objtemplate>
+	</control>
+</xlue>

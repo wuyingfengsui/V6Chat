@@ -1,0 +1,139 @@
+<xlue>
+	<control class="Main.P2PAddFriendPanel">
+		<objtemplate>
+			<children>
+				<obj id="PanelBkg" class="LayoutObject">
+					<attr>
+						<left>0</left>
+						<top>0</top>
+						<width>father.width</width>
+						<height>father.height</height>
+					</attr>
+					<children>
+						<obj id="prompt1" class="TextObject">
+							<attr>
+								<halign>left</halign>
+								<valign>center</valign>
+								<left>80</left>
+								<top>50</top>
+								<width>300</width>
+								<height>55</height>
+								<font>font.addfriendwnd.prompt</font>
+								<textcolor>system.darkorange</textcolor>
+								<text>请将下面的IP及端口号告诉对方：</text>
+							</attr>		
+						</obj>
+						<obj id="my_ip_pro" class="TextObject">
+							<attr>
+								<halign>left</halign>
+								<valign>center</valign>
+								<left>110</left>
+								<top>100</top>
+								<width>100</width>
+								<height>55</height>
+								<text>本机IP及端口号：</text>
+							</attr>		
+						</obj>
+						<obj id="my_ip" class="RichEditObject">
+							<attr>
+								<halign>left</halign>
+								<valign>center</valign>
+								<left>father.width-390</left>
+								<top>100</top>
+								<width>300</width>
+								<height>60</height>
+								<readonly>1</readonly>
+								<transparent>1</transparent>
+							</attr>
+							<eventlist>
+								<event name="OnBind" file="P2PAddFriendPanel.lua" func="my_ip_OnBind" />
+							</eventlist>
+						</obj>
+						<obj id="copy_button" class="Util.gradual_button">
+							<attr>
+								<left>father.width-90</left>
+								<top>110</top>
+								<width>60</width>
+								<height>30</height>
+								<NormalBkgID>app.button.normal</NormalBkgID>
+								<Text>复制</Text>
+								<FontID>font.category.item.normal</FontID>
+							</attr>
+							<eventlist>
+								<event name="OnClick" file="P2PAddFriendPanel.lua" func="copy_button_OnClick"/>
+							</eventlist>
+						</obj>
+						<obj id="prompt2" class="TextObject">
+							<attr>
+								<halign>left</halign>
+								<valign>center</valign>
+								<left>80</left>
+								<top>father.height/2-35</top>
+								<width>350</width>
+								<height>55</height>
+								<font>font.addfriendwnd.prompt</font>
+								<textcolor>system.darkorange</textcolor>
+								<text>或者在下面输入对方的IP及端口号：</text>
+							</attr>		
+						</obj>
+						<!--
+						<obj id="prompt3" class="TextObject">
+							<attr>
+								<left>390</left>
+								<top>father.height/2-15</top>
+								<width>120</width>
+								<height>18</height>
+								<textcolor>system.rose</textcolor>
+								<text>（不知道对方信息？）</text>
+							</attr>
+							<eventlist>
+								<event name="OnMouseMove" file="P2PAddFriendPanel.lua" func="prompt3_OnMouseMove" />
+								<event name="OnMouseLeave" file="P2PAddFriendPanel.lua" func="prompt3_OnMouseLeave" />
+								<event name="OnLButtonDown" file="P2PAddFriendPanel.lua" func="prompt3_OnLButtonDown" />
+							</eventlist>
+						</obj>
+						-->
+						<obj id="ip" class="Util.text_edit">
+			        		<attr>
+								<taborder>0</taborder>
+								<left>(father.width-390)/2</left>
+								<top>father.height/2+20</top>
+								<width>400</width>
+					    		<height>25</height>
+					    		<Text>IP(IPv4/IPv6地址)：</Text>
+					    		<TextWidth>110</TextWidth>
+								<TextColorResId>system.lightblue</TextColorResId>
+							</attr>
+						</obj>
+						<obj id="port" class="Util.text_edit">
+							<attr>
+								<taborder>1</taborder>
+								<left>(father.width-240)/2</left>
+								<top>father.height/2+55</top>
+								<width>120</width>
+								<height>25</height>
+								<Text>端口：</Text>
+								<TextWidth>35</TextWidth>
+								<TextColorResId>system.lightblue</TextColorResId>
+							</attr>
+						</obj>
+						<obj id="OK_button" class="Util.gradual_button">
+							<attr>
+								<left>(father.width-100)/2</left>
+								<top>father.height-100</top>
+								<width>100</width>
+								<height>50</height>
+								<NormalBkgID>app.button.normal</NormalBkgID>
+								<Text>发送请求</Text>
+								<FontID>font.category.item.big</FontID>
+							</attr>
+							<eventlist>
+								<event name="OnClick" file="P2PAddFriendPanel.lua" func="OK_btn_OnClick"/>
+							</eventlist>
+						</obj>
+					</children>
+				</obj>
+			</children>
+		</objtemplate>
+	</control>
+</xlue>

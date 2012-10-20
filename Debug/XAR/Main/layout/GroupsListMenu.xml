@@ -1,0 +1,122 @@
+<xlue>
+    <objtreetemplate id="GroupsListMenu.Tree">
+		<attr>
+			<left>-1000</left>
+			<top>-1000</top>
+			<width>2000</width>
+			<height>2000</height>
+		</attr>
+		<obj id="root" class="LayoutObject">
+			<attr>
+				<left>0</left>
+				<top>0</top>
+				<width>100</width>
+				<height>70</height>
+			</attr>
+			<children>
+				<obj id="bkg" class="TextureObject">
+					<attr>
+						<left>0</left>
+						<top>0</top>
+						<width>father.width</width>
+						<height>father.height</height>
+						<texture>texture.MainMenu.bkg</texture>
+					</attr>
+					<children>
+						<obj id="item.Chat" class="Util.Menu.Item">
+							<attr>
+								<left>0</left>
+								<top>0</top>
+								<width>father.width</width>
+								<height>20</height>
+								<Text>聊天</Text>
+							</attr>
+							<eventlist>
+								<event name="OnSelected" file="GroupsListMenu.xml.lua" func="GroupsListMenu_item_Chat_OnSelected"/>
+							</eventlist>
+						</obj>
+						<obj id="item.Quit" class="Util.Menu.Item">
+							<attr>
+								<left>0</left>
+								<top>21</top>
+								<width>father.width</width>
+								<height>20</height>
+								<Text>退出此圈</Text>
+							</attr>
+							<eventlist>
+								<event name="OnSelected" file="GroupsListMenu.xml.lua" func="GroupsListMenu_item_Quit_OnSelected"/>
+							</eventlist>
+						</obj>
+						<obj id="item.Move" class="Util.Menu.Item">
+							<attr>
+								<left>0</left>
+								<top>41</top>
+								<width>father.width</width>
+								<height>20</height>
+								<Text>移动至</Text>
+								<SubMenuTemplate>GroupsListMenu.SubMenu.GroupGroups</SubMenuTemplate>
+							</attr>
+						</obj>
+					</children>
+				</obj>
+			</children>
+			<eventlist>
+				<event name="OnInitControl" file="GroupsListMenu.xml.lua" func="GroupsListMenu_OnInitControl"/>
+			</eventlist>
+		</obj>
+	</objtreetemplate>
+	
+	<objtemplate id="GroupsListMenu.SubMenu.GroupGroups.Item" class="Util.Menu.Item">
+		<attr>
+			<left>0</left>
+			<top>0</top>
+			<width>father.width</width>
+			<height>20</height>
+		</attr>
+		<eventlist>
+			<event name="OnSelected" file="GroupsListMenu.xml.lua" func="GroupsListMenu_SubMenu_GroupGroups_Item_OnSelected"/>
+		</eventlist>
+	</objtemplate>
+	
+	<objtemplate id="GroupsListMenu.SubMenu.GroupGroups" class="LayoutObject">
+		<attr>
+			<left>0</left>
+			<top>0</top>
+			<width>200</width>
+			<height>30</height>
+		</attr>
+		<children>
+			<obj id="bkg" class="TextureObject">
+				<attr>
+					<left>0</left>
+					<top>0</top>
+					<width>father.width</width>
+					<height>father.height</height>
+					<texture>texture.MainMenu.bkg</texture>
+				</attr>
+				<children>
+					<obj id="item.blank" class="Util.Menu.Item">
+						<attr>
+							<left>0</left>
+							<top>0</top>
+							<width>father.width</width>
+							<height>20</height>
+							<Text>(空)</Text>
+						</attr>
+					</obj>
+				</children>
+			</obj>
+		</children>
+		<eventlist>
+			<event name="OnBind" file="GroupsListMenu.xml.lua" func="GroupsListMenu_SubMenu_GroupGroups_OnBind"/>
+		</eventlist>
+	</objtemplate>
+	
+	<hostwndtemplate id="GroupsListMenu.Wnd" class="MenuHostWnd">
+		<attr>
+		</attr>
+		<eventlist>
+			<event name="OnPopupMenu" file="GroupsListMenu.xml.lua" func="OnPopupMenu" />
+		</eventlist>
+	</hostwndtemplate>
+</xlue>

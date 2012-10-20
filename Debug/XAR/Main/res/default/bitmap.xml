@@ -1,0 +1,20 @@
+﻿<XLUE>
+<resource>
+	<!--普通的位图资源-->
+	<bitmap id="main.left_btn"  path="bitmap\left.png" />
+	<bitmap id="main.right_btn"  path="bitmap\right.png" />
+	<bitmap id="main.friendList.icon"  path="bitmap\firendlist.icon.png" />
+	<bitmap id="main.config.icon"  path="bitmap\config.icon.png" />
+	<bitmap id="main.tree_item.light"  path="bitmap\treeItem.light.png" />
+	<bitmap id="main.tree_item.tips"  path="bitmap\userInfo.tips.bkg.png" />
+	<bitmap id="main.file_list_item.icon"  path="bitmap\fileListItem.icon.png" />
+	<bitmap id="main.config.add_friend"  path="bitmap\add.friend.png" />
+	<bitmap id="main.config.add_friend_wnd_bkg"  path="bitmap\addFriend.bkg.png" />
+	
+	<imagelist id="main.file.share" splitter="1" vertical="0" varyblock ="0" blocksize="38" image="bitmap\file.share.png"/>
+		<texture id="main.file.share.disable"      imagelist="main.file.share" index="2"/>
+		<texture id="main.file.share.normal"      imagelist="main.file.share" index="1"/>
+		
+	<texture id="main.floatpanel.bkg" type="ThreeInOneH" image="bitmap\floatpanel.bkg.png"/>
+</resource>
+</XLUE>

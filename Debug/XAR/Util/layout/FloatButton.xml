@@ -1,0 +1,46 @@
+<!--XML最好存储为UTF-8编码-->
+<xlue>
+    <control class="Util.float_button">
+	    <attr_def>
+		    <attr name="BkgID" type="string" />
+			<attr name="Enable" type="bool" >
+				<default>true</default>
+			</attr>
+			<attr name="NowState" type="int" />
+			<attr name="FloatValue" type="int" />
+			<attr name="OriginalLeft" type="int" />
+			<attr name="OriginalTop" type="int" />
+		</attr_def>
+		<method_def>
+			<SetOriginalLeft file="FloatButton.lua" func="SetOriginalLeft"/>
+			<SetState file="FloatButton.lua" func="SetState"/>
+			<SetBkgID file="FloatButton.lua" func="SetBkgID"/>
+			<SetFloatValue file="FloatButton.lua" func="SetFloatValue"/>
+		</method_def>
+		<event_def>
+			<!-- 定义一个自定义事件，这样按钮的使用者就可以连这个逻辑事件-->
+			<OnClick />
+		</event_def>
+		<objtemplate>
+	        <children>
+		    <!--定义控件时内部子对象的实际id会被控件类型名修饰，不同控件中可以使用相同的子对象id-->
+		        <obj id="bkg" class="ImageObject">
+			        <attr>
+				        <left>0</left>
+				        <top>0</top>
+				        <width>father.width</width>
+				        <height>father.height</height>
+			        </attr>
+			    </obj>
+		    </children>
+			<eventlist>
+		        <event name="OnMouseMove" file="FloatButton.lua" func="OnMouseMove" />	
+		        <event name="OnMouseLeave" file="FloatButton.lua" func="OnMouseLeave" />
+                <event name="OnLButtonDown" file="FloatButton.lua" func="OnLButtonDown" />	
+                <event name="OnLButtonUp" file="FloatButton.lua" func="OnLButtonUp" />				
+		        <event name="OnBind" file="FloatButton.lua" func="OnBind" />
+		        <!--当按钮有焦点的时候，按下空格键也可以触发OnClick,加上试下?-->
+	        </eventlist>
+		</objtemplate>
+	</control>
+</xlue>

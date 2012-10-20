@@ -1,0 +1,71 @@
+<xlue>
+	<control class="Main.tabs">
+	    <attr_def>
+			<attr name="tabsNum" type="int" />
+			<attr name="nowTabNum" type="int" />
+			<attr name="background" type="string" />
+		</attr_def>
+		<method_def>
+			<AddTab file="Tabs.lua" func="AddTab"/>
+			<ShowTab file="Tabs.lua" func="ShowTab"/>
+			<UpdateTab file="Tabs.lua" func="UpdateTab"/>
+			<GetNowTabNum file="Tabs.lua" func="GetNowTabNum"/>
+		</method_def>
+		
+		<objtemplate>
+	    <children>
+		    <obj id="left_btn" class="Util.float_button">
+			    <attr>
+				    <left>40</left>
+				    <top>5</top>
+				    <width>38</width>
+				    <height>38</height>
+					<BkgID>main.left_btn</BkgID>
+					<FloatValue>4</FloatValue>
+			    </attr>
+				<eventlist>
+					<event name="OnClick" file="Tabs.lua" func="left_btn_OnClick"/>
+				</eventlist>
+			</obj>
+			<obj id="right_btn" class="Util.float_button">
+			    <attr>
+				    <left>father.width - 78</left>
+				    <top>5</top>
+				    <width>38</width>
+				    <height>38</height>
+					<BkgID>main.right_btn</BkgID>
+					<FloatValue>4</FloatValue>
+			    </attr>
+				<eventlist>
+					<event name="OnClick" file="Tabs.lua" func="right_btn_OnClick"/>
+				</eventlist>
+			</obj>
+			<obj id="white_bkg" class="FillObject">
+			    <attr>
+				    <left>6</left>
+				    <top>50</top>
+					<width>father.width - 12</width>
+				    <height>father.height - 90</height>
+				    <srccolor>main.tree.bkg</srccolor>
+				    <filltype>Monochrome</filltype>
+				    <alpha>255</alpha>
+				    <blendtype>Source</blendtype>
+			    </attr>
+				<children>
+				<obj id="bkg" class="ImageObject">
+			        <attr>
+				        <left>0</left>
+				        <top>0</top>
+				        <width>father.width</width>
+				        <height>father.height</height>
+			        </attr>
+			    </obj>
+				</children>
+		    </obj>
+		</children>
+		<eventlist>
+		    <event name="OnBind" file="Tabs.lua" func="OnBind" />
+	    </eventlist>
+		</objtemplate>
+	</control>
+</xlue>

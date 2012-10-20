@@ -1,0 +1,629 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="源文件">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="头文件">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="资源文件">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="gloox">
+      <UniqueIdentifier>{2b7185af-49f5-4fdd-8a75-3c3ce1fa7303}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="gloox\adhoc.cpp">
+      <Filter>gloox</Filter>
+    </ClCompile>
+    <ClCompile Include="gloox\annotations.cpp">
+      <Filter>gloox</Filter>
+    </ClCompile>
+    <ClCompile Include="gloox\base64.cpp">
+      <Filter>gloox</Filter>
+    </ClCompile>
+    <ClCompile Include="gloox\bookmarkstorage.cpp">
+      <Filter>gloox</Filter>
+    </ClCompile>
+    <ClCompile Include="gloox\chatstatefilter.cpp">
+      <Filter>gloox</Filter>
+    </ClCompile>
+    <ClCompile Include="gloox\client.cpp">
+      <Filter>gloox</Filter>
+    </ClCompile>
+    <ClCompile Include="gloox\clientbase.cpp">
+      <Filter>gloox</Filter>
+    </ClCompile>
+    <ClCompile Include="gloox\component.cpp">
+      <Filter>gloox</Filter>
+    </ClCompile>
+    <ClCompile Include="gloox\compressionzlib.cpp">
+      <Filter>gloox</Filter>
+    </ClCompile>
+    <ClCompile Include="gloox\connectionhttpproxy.cpp">
+      <Filter>gloox</Filter>
+    </ClCompile>
+    <ClCompile Include="gloox\connectionsocks5proxy.cpp">
+      <Filter>gloox</Filter>
+    </ClCompile>
+    <ClCompile Include="gloox\connectiontcpbase.cpp">
+      <Filter>gloox</Filter>
+    </ClCompile>
+    <ClCompile Include="gloox\connectiontcpclient.cpp">
+      <Filter>gloox</Filter>
+    </ClCompile>
+    <ClCompile Include="gloox\connectiontcpserver.cpp">
+      <Filter>gloox</Filter>
+    </ClCompile>
+    <ClCompile Include="gloox\dataform.cpp">
+      <Filter>gloox</Filter>
+    </ClCompile>
+    <ClCompile Include="gloox\dataformbase.cpp">
+      <Filter>gloox</Filter>
+    </ClCompile>
+    <ClCompile Include="gloox\dataformfield.cpp">
+      <Filter>gloox</Filter>
+    </ClCompile>
+    <ClCompile Include="gloox\dataformitem.cpp">
+      <Filter>gloox</Filter>
+    </ClCompile>
+    <ClCompile Include="gloox\dataformreported.cpp">
+      <Filter>gloox</Filter>
+    </ClCompile>
+    <ClCompile Include="gloox\delayeddelivery.cpp">
+      <Filter>gloox</Filter>
+    </ClCompile>
+    <ClCompile Include="gloox\disco.cpp">
+      <Filter>gloox</Filter>
+    </ClCompile>
+    <ClCompile Include="gloox\dns.cpp">
+      <Filter>gloox</Filter>
+    </ClCompile>
+    <ClCompile Include="gloox\flexoff.cpp">
+      <Filter>gloox</Filter>
+    </ClCompile>
+    <ClCompile Include="gloox\gloox.cpp">
+      <Filter>gloox</Filter>
+    </ClCompile>
+    <ClCompile Include="gloox\gpgencrypted.cpp">
+      <Filter>gloox</Filter>
+    </ClCompile>
+    <ClCompile Include="gloox\gpgsigned.cpp">
+      <Filter>gloox</Filter>
+    </ClCompile>
+    <ClCompile Include="gloox\inbandbytestream.cpp">
+      <Filter>gloox</Filter>
+    </ClCompile>
+    <ClCompile Include="gloox\inbandbytestreammanager.cpp">
+      <Filter>gloox</Filter>
+    </ClCompile>
+    <ClCompile Include="gloox\instantmucroom.cpp">
+      <Filter>gloox</Filter>
+    </ClCompile>
+    <ClCompile Include="gloox\jid.cpp">
+      <Filter>gloox</Filter>
+    </ClCompile>
+    <ClCompile Include="gloox\lastactivity.cpp">
+      <Filter>gloox</Filter>
+    </ClCompile>
+    <ClCompile Include="gloox\logsink.cpp">
+      <Filter>gloox</Filter>
+    </ClCompile>
+    <ClCompile Include="gloox\md5.cpp">
+      <Filter>gloox</Filter>
+    </ClCompile>
+    <ClCompile Include="gloox\messageeventfilter.cpp">
+      <Filter>gloox</Filter>
+    </ClCompile>
+    <ClCompile Include="gloox\messagefilter.cpp">
+      <Filter>gloox</Filter>
+    </ClCompile>
+    <ClCompile Include="gloox\messagesession.cpp">
+      <Filter>gloox</Filter>
+    </ClCompile>
+    <ClCompile Include="gloox\mucmessagesession.cpp">
+      <Filter>gloox</Filter>
+    </ClCompile>
+    <ClCompile Include="gloox\mucroom.cpp">
+      <Filter>gloox</Filter>
+    </ClCompile>
+    <ClCompile Include="gloox\mutex.cpp">
+      <Filter>gloox</Filter>
+    </ClCompile>
+    <ClCompile Include="gloox\nonsaslauth.cpp">
+      <Filter>gloox</Filter>
+    </ClCompile>
+    <ClCompile Include="gloox\oob.cpp">
+      <Filter>gloox</Filter>
+    </ClCompile>
+    <ClCompile Include="gloox\parser.cpp">
+      <Filter>gloox</Filter>
+    </ClCompile>
+    <ClCompile Include="gloox\prep.cpp">
+      <Filter>gloox</Filter>
+    </ClCompile>
+    <ClCompile Include="gloox\privacyitem.cpp">
+      <Filter>gloox</Filter>
+    </ClCompile>
+    <ClCompile Include="gloox\privacymanager.cpp">
+      <Filter>gloox</Filter>
+    </ClCompile>
+    <ClCompile Include="gloox\privatexml.cpp">
+      <Filter>gloox</Filter>
+    </ClCompile>
+    <ClCompile Include="gloox\registration.cpp">
+      <Filter>gloox</Filter>
+    </ClCompile>
+    <ClCompile Include="gloox\rosteritem.cpp">
+      <Filter>gloox</Filter>
+    </ClCompile>
+    <ClCompile Include="gloox\rostermanager.cpp">
+      <Filter>gloox</Filter>
+    </ClCompile>
+    <ClCompile Include="gloox\search.cpp">
+      <Filter>gloox</Filter>
+    </ClCompile>
+    <ClCompile Include="gloox\sha.cpp">
+      <Filter>gloox</Filter>
+    </ClCompile>
+    <ClCompile Include="gloox\simanager.cpp">
+      <Filter>gloox</Filter>
+    </ClCompile>
+    <ClCompile Include="gloox\siprofileft.cpp">
+      <Filter>gloox</Filter>
+    </ClCompile>
+    <ClCompile Include="gloox\socks5bytestream.cpp">
+      <Filter>gloox</Filter>
+    </ClCompile>
+    <ClCompile Include="gloox\socks5bytestreammanager.cpp">
+      <Filter>gloox</Filter>
+    </ClCompile>
+    <ClCompile Include="gloox\socks5bytestreamserver.cpp">
+      <Filter>gloox</Filter>
+    </ClCompile>
+    <ClCompile Include="gloox\stanza.cpp">
+      <Filter>gloox</Filter>
+    </ClCompile>
+    <ClCompile Include="gloox\stanzaextensionfactory.cpp">
+      <Filter>gloox</Filter>
+    </ClCompile>
+    <ClCompile Include="gloox\tag.cpp">
+      <Filter>gloox</Filter>
+    </ClCompile>
+    <ClCompile Include="gloox\tlsdefault.cpp">
+      <Filter>gloox</Filter>
+    </ClCompile>
+    <ClCompile Include="gloox\tlsgnutlsbase.cpp">
+      <Filter>gloox</Filter>
+    </ClCompile>
+    <ClCompile Include="gloox\tlsgnutlsclient.cpp">
+      <Filter>gloox</Filter>
+    </ClCompile>
+    <ClCompile Include="gloox\tlsgnutlsclientanon.cpp">
+      <Filter>gloox</Filter>
+    </ClCompile>
+    <ClCompile Include="gloox\tlsgnutlsserveranon.cpp">
+      <Filter>gloox</Filter>
+    </ClCompile>
+    <ClCompile Include="gloox\tlsopenssl.cpp">
+      <Filter>gloox</Filter>
+    </ClCompile>
+    <ClCompile Include="gloox\tlsschannel.cpp">
+      <Filter>gloox</Filter>
+    </ClCompile>
+    <ClCompile Include="gloox\uniquemucroom.cpp">
+      <Filter>gloox</Filter>
+    </ClCompile>
+    <ClCompile Include="gloox\vcard.cpp">
+      <Filter>gloox</Filter>
+    </ClCompile>
+    <ClCompile Include="gloox\vcardmanager.cpp">
+      <Filter>gloox</Filter>
+    </ClCompile>
+    <ClCompile Include="gloox\vcardupdate.cpp">
+      <Filter>gloox</Filter>
+    </ClCompile>
+    <ClCompile Include="gloox\xdelayeddelivery.cpp">
+      <Filter>gloox</Filter>
+    </ClCompile>
+    <ClCompile Include="XmppFileTransfer.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="XmppClientInner.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="XmppClient.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="XmppFT.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="gloox\adhoc.h">
+      <Filter>gloox</Filter>
+    </ClInclude>
+    <ClInclude Include="gloox\adhoccommandprovider.h">
+      <Filter>gloox</Filter>
+    </ClInclude>
+    <ClInclude Include="gloox\adhochandler.h">
+      <Filter>gloox</Filter>
+    </ClInclude>
+    <ClInclude Include="gloox\annotations.h">
+      <Filter>gloox</Filter>
+    </ClInclude>
+    <ClInclude Include="gloox\annotationshandler.h">
+      <Filter>gloox</Filter>
+    </ClInclude>
+    <ClInclude Include="gloox\base64.h">
+      <Filter>gloox</Filter>
+    </ClInclude>
+    <ClInclude Include="gloox\bookmarkhandler.h">
+      <Filter>gloox</Filter>
+    </ClInclude>
+    <ClInclude Include="gloox\bookmarkstorage.h">
+      <Filter>gloox</Filter>
+    </ClInclude>
+    <ClInclude Include="gloox\chatstatefilter.h">
+      <Filter>gloox</Filter>
+    </ClInclude>
+    <ClInclude Include="gloox\chatstatehandler.h">
+      <Filter>gloox</Filter>
+    </ClInclude>
+    <ClInclude Include="gloox\client.h">
+      <Filter>gloox</Filter>
+    </ClInclude>
+    <ClInclude Include="gloox\clientbase.h">
+      <Filter>gloox</Filter>
+    </ClInclude>
+    <ClInclude Include="gloox\component.h">
+      <Filter>gloox</Filter>
+    </ClInclude>
+    <ClInclude Include="gloox\compressionbase.h">
+      <Filter>gloox</Filter>
+    </ClInclude>
+    <ClInclude Include="gloox\compressiondatahandler.h">
+      <Filter>gloox</Filter>
+    </ClInclude>
+    <ClInclude Include="gloox\compressionzlib.h">
+      <Filter>gloox</Filter>
+    </ClInclude>
+    <ClInclude Include="gloox\connectionbase.h">
+      <Filter>gloox</Filter>
+    </ClInclude>
+    <ClInclude Include="gloox\connectiondatahandler.h">
+      <Filter>gloox</Filter>
+    </ClInclude>
+    <ClInclude Include="gloox\connectionhandler.h">
+      <Filter>gloox</Filter>
+    </ClInclude>
+    <ClInclude Include="gloox\connectionhttpproxy.h">
+      <Filter>gloox</Filter>
+    </ClInclude>
+    <ClInclude Include="gloox\connectionlistener.h">
+      <Filter>gloox</Filter>
+    </ClInclude>
+    <ClInclude Include="gloox\connectionsocks5proxy.h">
+      <Filter>gloox</Filter>
+    </ClInclude>
+    <ClInclude Include="gloox\connectiontcpbase.h">
+      <Filter>gloox</Filter>
+    </ClInclude>
+    <ClInclude Include="gloox\connectiontcpclient.h">
+      <Filter>gloox</Filter>
+    </ClInclude>
+    <ClInclude Include="gloox\connectiontcpserver.h">
+      <Filter>gloox</Filter>
+    </ClInclude>
+    <ClInclude Include="gloox\dataform.h">
+      <Filter>gloox</Filter>
+    </ClInclude>
+    <ClInclude Include="gloox\dataformbase.h">
+      <Filter>gloox</Filter>
+    </ClInclude>
+    <ClInclude Include="gloox\dataformfield.h">
+      <Filter>gloox</Filter>
+    </ClInclude>
+    <ClInclude Include="gloox\dataformitem.h">
+      <Filter>gloox</Filter>
+    </ClInclude>
+    <ClInclude Include="gloox\dataformreported.h">
+      <Filter>gloox</Filter>
+    </ClInclude>
+    <ClInclude Include="gloox\delayeddelivery.h">
+      <Filter>gloox</Filter>
+    </ClInclude>
+    <ClInclude Include="gloox\disco.h">
+      <Filter>gloox</Filter>
+    </ClInclude>
+    <ClInclude Include="gloox\discohandler.h">
+      <Filter>gloox</Filter>
+    </ClInclude>
+    <ClInclude Include="gloox\disconodehandler.h">
+      <Filter>gloox</Filter>
+    </ClInclude>
+    <ClInclude Include="gloox\dns.h">
+      <Filter>gloox</Filter>
+    </ClInclude>
+    <ClInclude Include="gloox\flexoff.h">
+      <Filter>gloox</Filter>
+    </ClInclude>
+    <ClInclude Include="gloox\flexoffhandler.h">
+      <Filter>gloox</Filter>
+    </ClInclude>
+    <ClInclude Include="gloox\gloox.h">
+      <Filter>gloox</Filter>
+    </ClInclude>
+    <ClInclude Include="gloox\gpgencrypted.h">
+      <Filter>gloox</Filter>
+    </ClInclude>
+    <ClInclude Include="gloox\gpgsigned.h">
+      <Filter>gloox</Filter>
+    </ClInclude>
+    <ClInclude Include="gloox\inbandbytestream.h">
+      <Filter>gloox</Filter>
+    </ClInclude>
+    <ClInclude Include="gloox\inbandbytestreamdatahandler.h">
+      <Filter>gloox</Filter>
+    </ClInclude>
+    <ClInclude Include="gloox\inbandbytestreamhandler.h">
+      <Filter>gloox</Filter>
+    </ClInclude>
+    <ClInclude Include="gloox\inbandbytestreammanager.h">
+      <Filter>gloox</Filter>
+    </ClInclude>
+    <ClInclude Include="gloox\instantmucroom.h">
+      <Filter>gloox</Filter>
+    </ClInclude>
+    <ClInclude Include="gloox\iqhandler.h">
+      <Filter>gloox</Filter>
+    </ClInclude>
+    <ClInclude Include="gloox\jid.h">
+      <Filter>gloox</Filter>
+    </ClInclude>
+    <ClInclude Include="gloox\lastactivity.h">
+      <Filter>gloox</Filter>
+    </ClInclude>
+    <ClInclude Include="gloox\lastactivityhandler.h">
+      <Filter>gloox</Filter>
+    </ClInclude>
+    <ClInclude Include="gloox\loghandler.h">
+      <Filter>gloox</Filter>
+    </ClInclude>
+    <ClInclude Include="gloox\logsink.h">
+      <Filter>gloox</Filter>
+    </ClInclude>
+    <ClInclude Include="gloox\macros.h">
+      <Filter>gloox</Filter>
+    </ClInclude>
+    <ClInclude Include="gloox\md5.h">
+      <Filter>gloox</Filter>
+    </ClInclude>
+    <ClInclude Include="gloox\messageeventfilter.h">
+      <Filter>gloox</Filter>
+    </ClInclude>
+    <ClInclude Include="gloox\messageeventhandler.h">
+      <Filter>gloox</Filter>
+    </ClInclude>
+    <ClInclude Include="gloox\messagefilter.h">
+      <Filter>gloox</Filter>
+    </ClInclude>
+    <ClInclude Include="gloox\messagehandler.h">
+      <Filter>gloox</Filter>
+    </ClInclude>
+    <ClInclude Include="gloox\messagesession.h">
+      <Filter>gloox</Filter>
+    </ClInclude>
+    <ClInclude Include="gloox\messagesessionhandler.h">
+      <Filter>gloox</Filter>
+    </ClInclude>
+    <ClInclude Include="gloox\mucinvitationhandler.h">
+      <Filter>gloox</Filter>
+    </ClInclude>
+    <ClInclude Include="gloox\mucmessagesession.h">
+      <Filter>gloox</Filter>
+    </ClInclude>
+    <ClInclude Include="gloox\mucroom.h">
+      <Filter>gloox</Filter>
+    </ClInclude>
+    <ClInclude Include="gloox\mucroomconfighandler.h">
+      <Filter>gloox</Filter>
+    </ClInclude>
+    <ClInclude Include="gloox\mucroomhandler.h">
+      <Filter>gloox</Filter>
+    </ClInclude>
+    <ClInclude Include="gloox\mutex.h">
+      <Filter>gloox</Filter>
+    </ClInclude>
+    <ClInclude Include="gloox\mutexguard.h">
+      <Filter>gloox</Filter>
+    </ClInclude>
+    <ClInclude Include="gloox\nonsaslauth.h">
+      <Filter>gloox</Filter>
+    </ClInclude>
+    <ClInclude Include="gloox\oob.h">
+      <Filter>gloox</Filter>
+    </ClInclude>
+    <ClInclude Include="gloox\parser.h">
+      <Filter>gloox</Filter>
+    </ClInclude>
+    <ClInclude Include="gloox\prep.h">
+      <Filter>gloox</Filter>
+    </ClInclude>
+    <ClInclude Include="gloox\presencehandler.h">
+      <Filter>gloox</Filter>
+    </ClInclude>
+    <ClInclude Include="gloox\privacyitem.h">
+      <Filter>gloox</Filter>
+    </ClInclude>
+    <ClInclude Include="gloox\privacylisthandler.h">
+      <Filter>gloox</Filter>
+    </ClInclude>
+    <ClInclude Include="gloox\privacymanager.h">
+      <Filter>gloox</Filter>
+    </ClInclude>
+    <ClInclude Include="gloox\privatexml.h">
+      <Filter>gloox</Filter>
+    </ClInclude>
+    <ClInclude Include="gloox\privatexmlhandler.h">
+      <Filter>gloox</Filter>
+    </ClInclude>
+    <ClInclude Include="gloox\registration.h">
+      <Filter>gloox</Filter>
+    </ClInclude>
+    <ClInclude Include="gloox\registrationhandler.h">
+      <Filter>gloox</Filter>
+    </ClInclude>
+    <ClInclude Include="gloox\resource.h">
+      <Filter>gloox</Filter>
+    </ClInclude>
+    <ClInclude Include="gloox\rosteritem.h">
+      <Filter>gloox</Filter>
+    </ClInclude>
+    <ClInclude Include="gloox\rosterlistener.h">
+      <Filter>gloox</Filter>
+    </ClInclude>
+    <ClInclude Include="gloox\rostermanager.h">
+      <Filter>gloox</Filter>
+    </ClInclude>
+    <ClInclude Include="gloox\search.h">
+      <Filter>gloox</Filter>
+    </ClInclude>
+    <ClInclude Include="gloox\searchhandler.h">
+      <Filter>gloox</Filter>
+    </ClInclude>
+    <ClInclude Include="gloox\sha.h">
+      <Filter>gloox</Filter>
+    </ClInclude>
+    <ClInclude Include="gloox\sihandler.h">
+      <Filter>gloox</Filter>
+    </ClInclude>
+    <ClInclude Include="gloox\simanager.h">
+      <Filter>gloox</Filter>
+    </ClInclude>
+    <ClInclude Include="gloox\siprofileft.h">
+      <Filter>gloox</Filter>
+    </ClInclude>
+    <ClInclude Include="gloox\siprofilefthandler.h">
+      <Filter>gloox</Filter>
+    </ClInclude>
+    <ClInclude Include="gloox\siprofilehandler.h">
+      <Filter>gloox</Filter>
+    </ClInclude>
+    <ClInclude Include="gloox\socks5bytestream.h">
+      <Filter>gloox</Filter>
+    </ClInclude>
+    <ClInclude Include="gloox\socks5bytestreamdatahandler.h">
+      <Filter>gloox</Filter>
+    </ClInclude>
+    <ClInclude Include="gloox\socks5bytestreamhandler.h">
+      <Filter>gloox</Filter>
+    </ClInclude>
+    <ClInclude Include="gloox\socks5bytestreammanager.h">
+      <Filter>gloox</Filter>
+    </ClInclude>
+    <ClInclude Include="gloox\socks5bytestreamserver.h">
+      <Filter>gloox</Filter>
+    </ClInclude>
+    <ClInclude Include="gloox\stanza.h">
+      <Filter>gloox</Filter>
+    </ClInclude>
+    <ClInclude Include="gloox\stanzaextension.h">
+      <Filter>gloox</Filter>
+    </ClInclude>
+    <ClInclude Include="gloox\stanzaextensionfactory.h">
+      <Filter>gloox</Filter>
+    </ClInclude>
+    <ClInclude Include="gloox\statisticshandler.h">
+      <Filter>gloox</Filter>
+    </ClInclude>
+    <ClInclude Include="gloox\subscriptionhandler.h">
+      <Filter>gloox</Filter>
+    </ClInclude>
+    <ClInclude Include="gloox\tag.h">
+      <Filter>gloox</Filter>
+    </ClInclude>
+    <ClInclude Include="gloox\taghandler.h">
+      <Filter>gloox</Filter>
+    </ClInclude>
+    <ClInclude Include="gloox\tlsbase.h">
+      <Filter>gloox</Filter>
+    </ClInclude>
+    <ClInclude Include="gloox\tlsdefault.h">
+      <Filter>gloox</Filter>
+    </ClInclude>
+    <ClInclude Include="gloox\tlsgnutlsbase.h">
+      <Filter>gloox</Filter>
+    </ClInclude>
+    <ClInclude Include="gloox\tlsgnutlsclient.h">
+      <Filter>gloox</Filter>
+    </ClInclude>
+    <ClInclude Include="gloox\tlsgnutlsclientanon.h">
+      <Filter>gloox</Filter>
+    </ClInclude>
+    <ClInclude Include="gloox\tlsgnutlsserveranon.h">
+      <Filter>gloox</Filter>
+    </ClInclude>
+    <ClInclude Include="gloox\tlshandler.h">
+      <Filter>gloox</Filter>
+    </ClInclude>
+    <ClInclude Include="gloox\tlsopenssl.h">
+      <Filter>gloox</Filter>
+    </ClInclude>
+    <ClInclude Include="gloox\tlsschannel.h">
+      <Filter>gloox</Filter>
+    </ClInclude>
+    <ClInclude Include="gloox\uniquemucroom.h">
+      <Filter>gloox</Filter>
+    </ClInclude>
+    <ClInclude Include="gloox\vcard.h">
+      <Filter>gloox</Filter>
+    </ClInclude>
+    <ClInclude Include="gloox\vcardhandler.h">
+      <Filter>gloox</Filter>
+    </ClInclude>
+    <ClInclude Include="gloox\vcardmanager.h">
+      <Filter>gloox</Filter>
+    </ClInclude>
+    <ClInclude Include="gloox\vcardupdate.h">
+      <Filter>gloox</Filter>
+    </ClInclude>
+    <ClInclude Include="gloox\xdelayeddelivery.h">
+      <Filter>gloox</Filter>
+    </ClInclude>
+    <ClInclude Include="XmppClient.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="XmppFileTransfer.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Util.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="XmppClientInner.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="XmppClientRosterListener.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="XmppClientMessageListener.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="XmppFT.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="resource.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="xmpp_interface.rc">
+      <Filter>资源文件</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+</Project>

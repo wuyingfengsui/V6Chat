@@ -1,0 +1,10 @@
+﻿<XLUE>
+<resource>
+	<texture id="chat.bkg"  type="NineInOne" path="bitmap\ChatFrame.Bkg.png" />
+	<texture id="chat.sendfile"  path="bitmap\File.png" />
+	
+	<imagelist id="chat.sendfile" splitter="1" vertical="0" varyblock ="0" blocksize="38" image="bitmap\File.png"/>
+		<texture id="chat.sendfile.hover"      imagelist="chat.sendfile" index="1"/>
+		<texture id="chat.sendfile.normal"      imagelist="chat.sendfile" index="2"/>
+</resource>
+</XLUE>

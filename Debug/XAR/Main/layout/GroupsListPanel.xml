@@ -1,0 +1,46 @@
+<!--XML最好存储为UTF-8编码-->
+<xlue>
+    <objtreetemplate id="Main.Tabs.GroupList">
+	    <attr>
+		    <left>-200</left>
+			<top>-200</top>
+			<width>2000</width>
+			<height>2000</height>
+		</attr>
+		<obj id="white_bkg" class="FillObject">
+			<attr>
+				<width>280</width>
+				<height>300</height>
+				<srccolor>main.tree.bkg</srccolor>
+				<filltype>Monochrome</filltype>
+				<alpha>255</alpha>
+				<blendtype>Source</blendtype>
+			</attr>
+			<children>
+			    <obj id="tree" class="MainTreeCtrl">
+					<attr>
+						<left>5</left>
+						<top>5</top>
+						<width>280 - 10</width>
+						<height>300-10</height>
+					</attr>
+				    <eventlist>
+					    <event name="OnSelected" file="GroupsListPanel.xml.lua" func="tree_OnSelected" />
+						<event name="OnPopupItemMenu" file="GroupsListPanel.xml.lua" func="tree_OnPopupItemMenu" />
+						<event name="OnPopupGroupMenu" file="GroupsListPanel.xml.lua" func="tree_OnPopupGroupMenu" />
+						<event name="OnHover" file="GroupsListPanel.xml.lua" func="tree_OnHover" />
+						<event name="OnLeave" file="GroupsListPanel.xml.lua" func="tree_OnLeave" />
+						<event name="OnInitControl" file="GroupsListPanel.xml.lua" func="tree_OnInitControl" />
+				    </eventlist>
+			    </obj>
+			</children>
+		</obj>
+	</objtreetemplate>
+	
+	<hostwndtemplate id="Main.Tabs.GroupListWnd" class="FrameHostWnd" >
+        <attr>
+            <width>280</width>
+            <height>300</height>
+        </attr>
+    </hostwndtemplate>
+</xlue>

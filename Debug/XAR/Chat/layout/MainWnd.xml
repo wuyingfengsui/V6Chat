@@ -1,0 +1,355 @@
+<!--XML最好存储为UTF-8编码-->
+<xlue>
+
+<objtreetemplate id="Chat.Tree">
+	<attr>
+			<left>-200</left>
+			<top>-200</top>
+			<width>2000</width>
+			<height>2000</height>
+	</attr>
+
+	<obj id="app.bkg" class="TextureObject">
+		<attr>
+			<left>0</left>
+			<top>0</top>
+			<width>500</width>
+			<height>600</height>
+			<texture>chat.bkg</texture>
+			<alpha>230</alpha>
+		</attr>
+		<children>
+		    <obj id="title" class="CaptionObject">
+			    <attr>
+				    <left>0</left>
+			        <top>0</top>
+			        <width>father.width</width>
+			        <height>50</height>
+					<zorder>-1000</zorder>
+				</attr>
+			</obj>
+			<obj id="mainwnd.resize.left" class="ResizeObject">
+				<attr>
+					<left>0</left>
+					<top>20</top>
+					<width>10</width>
+					<height>father.height - 35</height>
+					<type>left</type>
+					<zorder>-900</zorder>
+				</attr>
+			</obj>
+			<obj id="mainwnd.resize.right" class="ResizeObject">
+				<attr>
+					<top>20</top>
+					<left>father.width-10</left>
+					<width>10</width>
+					<height>father.height - 35</height>
+					<type>right</type>
+					<zorder>-900</zorder>
+				</attr>
+			</obj>
+			<obj id="mainwnd.resize.top" class="ResizeObject">
+				<attr>
+					<left>15</left>
+					<top>0</top>
+					<width>father.width - 30</width>
+					<height>20</height>
+					<type>top</type>
+					<zorder>-900</zorder>
+				</attr>
+			</obj>
+			<obj id="mainwnd.resize.bottom" class="ResizeObject">
+				<attr>
+					<left>10</left>
+					<top>father.height-10</top>
+					<width>father.width - 20</width>
+					<height>10</height>
+					<type>bottom</type>
+					<zorder>-900</zorder>
+				</attr>
+			</obj>
+			<obj id="mainwnd.resize.topleft" class="ResizeObject">
+				<attr>
+					<top>5</top>
+					<left>5</left>
+					<width>10</width>
+					<height>10</height>
+					<type>topleft</type>
+					<zorder>-900</zorder>
+				</attr>
+			</obj>
+			<obj id="mainwnd.resize.topright" class="ResizeObject">
+				<attr>
+					<left>father.width-10</left>
+					<top>5</top>
+					<width>10</width>
+					<height>10</height>
+					<type>topright</type>
+					<zorder>-900</zorder>
+				</attr>
+			</obj>
+			<obj id="mainwnd.resize.bottomleft" class="ResizeObject">
+				<attr>
+					<top>father.height-10</top>
+					<width>10</width>
+					<height>10</height>
+					<type>bottomleft</type>
+					<zorder>-900</zorder>
+				</attr>
+			</obj>
+			<obj id="mainwnd.resize.bottomright" class="ResizeObject">
+				<attr>
+					<left>father.width-10</left>
+					<top>father.height-10</top>
+					<width>10</width>
+					<height>10</height>
+					<type>bottomright</type>
+					<zorder>-900</zorder>
+				</attr>
+			</obj>
+			<obj id="mainwnd.body" class="LayoutObject">
+					<attr>
+						<left>0</left>
+						<top>0</top>
+						<width>father.width</width>
+						<height>father.height</height>
+					</attr>
+					<children>
+						<obj id="close_button" class="Util.float_button">
+							<attr type="int" name="NowState"/>
+							<attr>
+								<left>father.width-50</left>
+								<top>5</top>
+								<width>24</width>
+								<height>24</height>
+								<BkgID>app.close</BkgID>
+								<FloatValue>2</FloatValue>
+							</attr>
+							<eventlist>
+								<event name="OnClick" file="MainWnd.xml.lua" func="close_btn_OnClick"/>
+							</eventlist>
+						</obj>
+						<obj id="min_button" class="Util.float_button">
+							<attr type="int" name="NowState"/>
+							<attr>
+								<left>father.width-80</left>
+								<top>5</top>
+								<width>24</width>
+								<height>24</height>
+								<zorder>1</zorder>
+								<BkgID>app.min</BkgID>
+								<FloatValue>2</FloatValue>
+							</attr>
+						<eventlist>
+							<event name="OnClick" file="MainWnd.xml.lua" func="min_btn_OnClick"/>
+						</eventlist>
+						</obj>
+						<obj id="peer_head" class="Util.head_image">
+							<attr type="int" name="NowState"/>
+							<attr>
+								<left>30</left>
+								<top>-5</top>
+								<width>80</width>
+								<height>100</height>
+							</attr>
+							<eventlist>
+								<event name="OnClick" file="MainWnd.xml.lua" func="peer_head_OnClick"/>
+								<event name="OnBind" file="MainWnd.xml.lua" func="peer_head_OnBind" />
+							</eventlist>
+						</obj>
+						<obj id="peer_name" class="TextObject">
+							<attr>
+								<halign>left</halign>
+								<valign>center</valign>
+								<font>font.mainpanel.nick_name</font>
+								<effect>bright</effect>
+								<effectcolor>main.tip.name.green</effectcolor>
+								<left>120</left>
+								<top>20</top>
+								<width>father.width - 130</width>
+								<height>35</height>
+								<endellipsis>1</endellipsis>
+								<wordellipsis>1</wordellipsis>
+							</attr>		
+						</obj>
+						<obj id="introduction" class="TextObject">
+							<attr>
+								<halign>left</halign>
+								<valign>center</valign>
+								<left>120</left>
+								<top>60</top>
+								<width>father.width - 130</width>
+								<height>18</height>
+								<endellipsis>1</endellipsis>
+								<wordellipsis>1</wordellipsis>
+							</attr>		
+						</obj>
+						<obj id="chatPanel" class="System.RichEdit">
+							<attr>
+								<left>10</left>
+								<top>100</top>
+								<width>father.width - 20</width>
+								<height>father.height - 300</height>
+								<Multiline>true</Multiline>
+								<AllowVSB>true</AllowVSB>
+							</attr>		
+						</obj>
+						<obj id="send_file_button" class="Thunder.Button">
+							<attr>
+								<left>15</left>
+								<top>father.height - 207</top>
+								<width>38</width>
+								<height>42</height>
+								<HoverBkgID>chat.sendfile.hover</HoverBkgID>
+								<NormalBkgID>chat.sendfile.normal</NormalBkgID>
+								<DownBkgID>chat.sendfile.hover</DownBkgID>
+								<Enable>true</Enable>
+							</attr>
+							<eventlist>
+								<event name="OnClick" file="MainWnd.xml.lua" func="send_file_btn_OnClick"/>
+							</eventlist>
+						</obj>
+						<obj id="history_button" class="Util.downUp_button">
+							<attr>
+								<left>father.width - 90</left>
+								<top>father.height - 197</top>
+								<width>75</width>
+								<height>27</height>
+								<NormalBkgID>app.button.normal</NormalBkgID>
+								<Text>聊天记录</Text>
+							</attr>
+							<eventlist>
+								<event name="OnDownClick" file="MainWnd.xml.lua" func="history_btn_OnDownClick"/>
+								<event name="OnUpClick" file="MainWnd.xml.lua" func="history_btn_OnUpClick"/>
+							</eventlist>
+						</obj>
+						<obj id="sendPanel.bkg" class="TextureObject">
+							<attr>
+								<left>10</left>
+								<top>father.height - 170</top>
+								<width>father.width - 20</width>
+								<height>123</height>
+								<texture>texture.edit.bkg.normal</texture>
+								<alpha>255</alpha>
+							</attr>
+							<children>
+								<obj id="sendPanel" class="System.RichEdit">
+									<attr>
+										<left>3</left>
+										<top>3</top>
+										<width>father.width - 6</width>
+										<height>father.height - 6</height>
+										<Multiline>true</Multiline>
+										<AllowVSB>true</AllowVSB>
+									</attr>
+									<eventlist>
+										<event name="OnEditChange" file="MainWnd.xml.lua" func="sendPanel_OnEditChange"/>
+										<event name="OnGetObjectText" file="MainWnd.xml.lua" func="sendPanel_OnGetObjectText"/>
+									</eventlist>
+								</obj>
+							</children>
+						</obj>
+						<obj id="send_button" class="Util.gradual_button">
+							<attr>
+								<left>father.width-90</left>
+								<top>father.height - 40</top>
+								<width>75</width>
+								<height>27</height>
+								<NormalBkgID>app.button.normal</NormalBkgID>
+								<Text>发送</Text>
+							</attr>
+							<eventlist>
+								<event name="OnClick" file="MainWnd.xml.lua" func="send_btn_OnClick"/>
+							</eventlist>
+						</obj>
+					</children>
+			</obj>
+			<obj id="historywnd.body" class="LayoutObject">
+				<attr>
+					<left>father.width - 400</left>
+					<top>100</top>
+					<width>father.width</width>
+					<height>father.height</height>
+				</attr>
+				<children>
+					<obj id="history_pre_btn" class="Util.float_button">
+						<attr>
+							<left>40</left>
+							<top>5</top>
+							<width>38</width>
+							<height>38</height>
+							<BkgID>main.left_btn</BkgID>
+							<FloatValue>4</FloatValue>
+						</attr>
+						<eventlist>
+							<event name="OnClick" file="MainWnd.xml.lua" func="history_pre_btn_OnClick"/>
+						</eventlist>
+					</obj>
+					<obj id="history_time" class="TextObject">
+						<attr>
+							<halign>center</halign>
+							<valign>center</valign>
+							<left>80</left>
+							<top>13</top>
+							<width>242</width>
+							<height>22</height>
+							<font>font.chatpanel.history_time</font>
+						</attr>		
+					</obj>
+					<obj id="history_aft_btn" class="Util.float_button">
+						<attr>
+							<left>322</left>
+							<top>5</top>
+							<width>38</width>
+							<height>38</height>
+							<BkgID>main.right_btn</BkgID>
+							<FloatValue>4</FloatValue>
+						</attr>
+						<eventlist>
+							<event name="OnClick" file="MainWnd.xml.lua" func="history_aft_btn_OnClick"/>
+						</eventlist>
+					</obj>
+					<obj id="historyPanel" class="System.RichEdit">
+						<attr>
+							<left>10</left>
+							<top>50</top>
+							<width>380</width>
+							<height>father.height - 165</height>
+							<Multiline>true</Multiline>
+							<AllowVSB>true</AllowVSB>
+						</attr>		
+					</obj>
+				</children>
+				<eventlist>
+					<event name="OnBind" file="MainWnd.xml.lua" func="history_body_OnBind"/>
+				</eventlist>
+			</obj>
+		</children>
+	</obj>
+</objtreetemplate>
+	
+<hostwndtemplate id="Chat.Wnd" class="FrameHostWnd">
+		<attr> 
+			<title>Main</title>
+			<layered>1</layered>
+			<left>200</left> 
+			<top>100</top>
+			<width>500</width>
+			<height>600</height>
+			<visible>1</visible>
+			<enable>1</enable>
+			<maxbox>1</maxbox>
+			<minbox>1</minbox>
+			<minwidth>500</minwidth>
+			<minheight>600</minheight>
+			<appwindow>1</appwindow>
+		</attr>
+		<eventlist>
+		    <event name="OnCreate" file="MainWnd.xml.lua" func="main_wnd_OnCreate" />
+			<event name="OnDestroy" file="MainWnd.xml.lua" func="main_wnd_OnDestroy" />
+			<event name="OnShowWindow" file="MainWnd.xml.lua" func="main_wnd_OnShowWindow" />
+			<event name="OnSize" file="MainWnd.xml.lua" func="main_wnd_OnSize"/>
+			<event name="OnFocusChange" file="MainWnd.xml.lua" func="main_wnd_OnFocusChange" />
+	    </eventlist>
+</hostwndtemplate>
+</xlue>

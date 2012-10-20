@@ -1,0 +1,66 @@
+<xlue>
+    <objtreetemplate id="ShareFilesListMenu.Tree">
+		<attr>
+			<left>-1000</left>
+			<top>-1000</top>
+			<width>2000</width>
+			<height>2000</height>
+		</attr>
+		<obj id="root" class="LayoutObject">
+			<attr>
+				<left>0</left>
+				<top>0</top>
+				<width>100</width>
+				<height>50</height>
+			</attr>
+			<children>
+				<obj id="bkg" class="TextureObject">
+					<attr>
+						<left>0</left>
+						<top>0</top>
+						<width>father.width</width>
+						<height>father.height</height>
+						<texture>texture.MainMenu.bkg</texture>
+					</attr>
+					<children>
+						<obj id="item.Pause" class="Util.Menu.Item">
+							<attr>
+								<left>0</left>
+								<top>0</top>
+								<width>father.width</width>
+								<height>20</height>
+								<Text>暂停分享</Text>
+							</attr>
+							<eventlist>
+								<event name="OnSelected" file="ShareFilesListMenu.xml.lua" func="item_Pause_OnSelected"/>
+							</eventlist>
+						</obj>
+						<obj id="item.Delete" class="Util.Menu.Item">
+							<attr>
+								<left>0</left>
+								<top>21</top>
+								<width>father.width</width>
+								<height>20</height>
+								<Text>取消分享</Text>
+							</attr>
+							<eventlist>
+								<event name="OnSelected" file="ShareFilesListMenu.xml.lua" func="item_Delete_OnSelected"/>
+							</eventlist>
+						</obj>
+					</children>
+				</obj>
+			</children>
+			<eventlist>
+				<event name="OnInitControl" file="ShareFilesListMenu.xml.lua" func="OnInitControl"/>
+			</eventlist>
+		</obj>
+	</objtreetemplate>
+	
+	<hostwndtemplate id="ShareFilesListMenu.Wnd" class="MenuHostWnd">
+		<attr>
+		</attr>
+		<eventlist>
+			<event name="OnPopupMenu" file="ShareFilesListMenu.xml.lua" func="OnPopupMenu" />
+		</eventlist>
+	</hostwndtemplate>
+</xlue>

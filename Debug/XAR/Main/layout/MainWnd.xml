@@ -1,0 +1,157 @@
+<!--XML最好存储为UTF-8编码-->
+<xlue>
+
+<objtreetemplate id="Main.Tree">
+	<attr>
+			<left>-200</left>
+			<top>-200</top>
+			<width>2000</width>
+			<height>2000</height>
+	</attr>
+
+	<obj id="app.bkg" class="ImageObject">
+		<attr>
+			<left>0</left>
+			<top>0</top>
+			<width>315</width>
+			<height>516</height>
+			<!--资源相关的属性使用资源定义xml中设置的资源名-->
+			<image>app.bkg</image>
+			<alpha>255</alpha>
+			<!--设置成拉伸模式,ImageObject默认是不会拉伸其对应的位图的-->
+			<drawmode>1</drawmode>
+		</attr>
+		
+		<children>
+		    <obj id="title" class="CaptionObject">
+			    <attr>
+				    <left>0</left>
+			        <top>0</top>
+			        <width>father.width</width>
+			        <height>120</height>
+				</attr>
+			</obj>
+	        <obj id="close_button" class="Util.float_button">
+			    <attr type="int" name="NowState"/>
+				<attr>
+					<left>father.width-50</left>
+					<top>0</top>
+					<width>24</width>
+					<height>24</height>
+					<zorder>1</zorder>
+					<BkgID>app.close</BkgID>
+					<FloatValue>2</FloatValue>
+				</attr>
+				<eventlist>
+					<event name="OnClick" file="MainWnd.xml.lua" func="close_btn_OnClick"/>
+				</eventlist>
+		    </obj>
+			<obj id="min_button" class="Util.float_button">
+			    <attr type="int" name="NowState"/>
+				<attr>
+					<left>father.width-80</left>
+					<top>0</top>
+					<width>24</width>
+					<height>24</height>
+					<zorder>1</zorder>
+					<BkgID>app.min</BkgID>
+					<FloatValue>2</FloatValue>
+				</attr>
+				<eventlist>
+					<event name="OnClick" file="MainWnd.xml.lua" func="min_btn_OnClick"/>
+				</eventlist>
+		    </obj>
+			<obj id="my_head" class="Util.head_image">
+			    <attr type="int" name="NowState"/>
+			    <attr>
+					<left>30</left>
+					<top>20</top>
+					<width>80</width>
+					<height>100</height>
+				</attr>
+				<eventlist>
+					<event name="OnClick" file="MainWnd.xml.lua" func="my_head_OnClick"/>
+					<event name="OnBind" file="MainWnd.xml.lua" func="my_head_OnBind" />
+				</eventlist>
+			</obj>
+			<obj id="name" class="TextObject">
+				<attr>
+					<halign>left</halign>
+					<valign>center</valign>
+					<font>font.mainpanel.nick_name</font>
+					<effect>bright</effect>
+					<effectcolor>main.tip.name.green</effectcolor>
+					<left>120</left>
+					<top>20</top>
+					<width>father.width - 130</width>
+					<height>35</height>
+					<endellipsis>1</endellipsis>
+					<wordellipsis>1</wordellipsis>
+				</attr>		
+			</obj>
+			<obj id="introduction" class="TextObject">
+				<attr>
+					<halign>left</halign>
+					<valign>center</valign>
+					<left>120</left>
+					<top>60</top>
+					<width>father.width - 150</width>
+					<height>18</height>
+					<endellipsis>1</endellipsis>
+					<wordellipsis>1</wordellipsis>
+				</attr>
+				<eventlist>
+				    <event name="OnMouseMove" file="MainWnd.xml.lua" func="introduction_OnMouseMove" />
+					<event name="OnMouseLeave" file="MainWnd.xml.lua" func="introduction_OnMouseLeave" />
+					<event name="OnLButtonDown" file="MainWnd.xml.lua" func="introduction_OnLButtonDown" />
+	            </eventlist>
+			</obj>
+			<obj id="edit_introduction" class="EditObject">
+				<attr>
+					<left>120</left>
+					<top>60</top>
+					<width>father.width - 150</width>
+					<height>18</height>
+					<visible>0</visible>
+					<maxlength>50</maxlength>
+				</attr>
+				<eventlist>
+					<event name="OnFocusChange" file="MainWnd.xml.lua" func="edit_introduction_OnFocusChange" />
+	            </eventlist>
+			</obj>
+			<obj id="tabs" class="Main.tabs">
+			    <attr>
+					<left>11</left>
+					<top>140</top>
+					<width>father.width - 21</width>
+					<height>400</height>
+				</attr>
+				<eventlist>
+					<event name="OnBind" file="MainWnd.xml.lua" func="tabs_OnBind" />
+				</eventlist>
+			</obj>
+	    </children>
+	</obj>
+	<eventlist>
+		<event name="OnBindHostWnd" file="MainWnd.xml.lua" func="tree_OnBindHostWnd" />
+	</eventlist>
+</objtreetemplate>
+	
+<hostwndtemplate id="Main.Wnd" class="FrameHostWnd">
+		<attr> 
+			<mainwnd>1</mainwnd>
+			<appwindow>1</appwindow>
+			<title>V6Chat</title>
+			<layered>1</layered>
+			<left>200</left> 
+			<top>100</top>
+			<!--注意这是容器窗口的大小，设置的要合理-->
+			<width>315</width>
+			<height>516</height>
+		</attr>
+		<eventlist>
+		    <event name="OnCreate" file="MainWnd.xml.lua" func="main_wnd_OnCreate" />
+			<event name="OnDestroy" file="MainWnd.xml.lua" func="main_wnd_OnDestroy" />
+	    </eventlist>
+</hostwndtemplate>
+</xlue>

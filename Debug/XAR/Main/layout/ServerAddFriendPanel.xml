@@ -1,0 +1,108 @@
+<xlue>
+	<control class="Main.ServerAddFriendPanel">
+		<method_def>
+			<UpdateServerListItem file="ServerAddFriendPanel.lua" func="UpdateServerListItem" />
+			<UpdateUsersListItem file="ServerAddFriendPanel.lua" func="UpdateUsersListItem" />
+			<ShowUsersListEmpty file="ServerAddFriendPanel.lua" func="ShowUsersListEmpty" />
+		</method_def>
+		<attr_def>
+			<attr name="selectedId" type="int">
+				<default>-1</default>
+			</attr>
+		</attr_def>
+		<objtemplate>
+			<children>
+				<obj id="PanelBkg" class="LayoutObject">
+					<attr>
+						<left>0</left>
+						<top>0</top>
+						<width>father.width</width>
+						<height>father.height</height>
+					</attr>
+					<children>
+						<obj id="prompt1" class="TextObject">
+							<attr>
+								<halign>left</halign>
+								<valign>center</valign>
+								<left>30</left>
+								<top>30</top>
+								<width>300</width>
+								<height>40</height>
+								<font>font.addfriendwnd.prompt</font>
+								<textcolor>system.darkorange</textcolor>
+								<text>请选择一个服务源：</text>
+							</attr>		
+						</obj>
+						<obj id="addServer_button" class="Util.gradual_button">
+							<attr>
+								<left>father.width - 95</left>
+								<top>40</top>
+								<width>50</width>
+								<height>25</height>
+								<NormalBkgID>app.button.normal</NormalBkgID>
+								<Text>添加</Text>
+								<FontID>font.category.item.normal</FontID>
+							</attr>
+							<eventlist>
+								<event name="OnClick" file="ServerAddFriendPanel.lua" func="addServer_btn_OnClick"/>
+							</eventlist>
+						</obj>
+			    		<obj id="serverList" class="ServersListCtrl">
+							<attr>
+								<left>30</left>
+								<top>70</top>
+								<width>father.width - 60</width>
+								<height>100</height>
+							</attr>
+				    		<eventlist>
+								<event name="OnInitControl" file="ServerAddFriendPanel.lua" func="serverList_OnInitControl" />
+								<event name="OnSelected" file="ServerAddFriendPanel.lua" func="serverList_OnSelected" />
+								<event name="OnChanged" file="ServerAddFriendPanel.lua" func="serverList_OnChanged" />
+							</eventlist>
+			    		</obj>
+						<obj id="searchContect" class="EditObject">
+							<attr>
+								<left>34</left>
+								<top>190</top>
+								<width>father.width - 140</width>
+								<height>30</height>
+								<viewinset>0,7,0,0</viewinset>
+								<font>font.category.item.big</font>
+							</attr>
+							<eventlist>
+								<event name="OnInitControl" file="ServerAddFriendPanel.lua" func="searchContect_OnInitControl" />
+								<event name="OnFocusChange" file="ServerAddFriendPanel.lua" func="searchContect_OnFocusChange" />
+							</eventlist>
+						</obj>
+						<obj id="search_button" class="Util.gradual_button">
+							<attr>
+								<left>father.width - 95</left>
+								<top>190</top>
+								<width>60</width>
+								<height>30</height>
+								<NormalBkgID>app.button.normal</NormalBkgID>
+								<Text>搜索</Text>
+								<FontID>font.category.item.big</FontID>
+							</attr>
+							<eventlist>
+								<event name="OnClick" file="ServerAddFriendPanel.lua" func="search_btn_OnClick"/>
+							</eventlist>
+						</obj>
+			    		<obj id="usersList" class="UsersListCtrl">
+							<attr>
+								<left>30</left>
+								<top>230</top>
+								<width>father.width - 60</width>
+								<height>father.height - 260</height>
+							</attr>
+				    		<eventlist>
+								<event name="OnAddUser" file="ServerAddFriendPanel.lua" func="usersList_OnAddUser" />
+								<event name="OnInitControl" file="ServerAddFriendPanel.lua" func="usersList_OnInitControl" />
+							</eventlist>
+			    		</obj>
+					</children>
+				</obj>
+			</children>
+		</objtemplate>
+	</control>
+</xlue>

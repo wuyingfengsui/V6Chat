@@ -1,0 +1,115 @@
+<!--XML最好存储为UTF-8编码-->
+<xlue>
+
+<objtreetemplate id="V6MessageBox.Tree">
+	<attr>
+			<left>-200</left>
+			<top>-200</top>
+			<width>2000</width>
+			<height>2000</height>
+	</attr>
+
+	<obj id="messagebox.bkg" class="TextureObject">
+		<attr>
+			<left>0</left>
+			<top>0</top>
+			<width>500</width>
+			<height>600</height>
+			<texture>app.messagebox.bkg</texture>
+			<alpha>255</alpha>
+		</attr>
+		<children>
+	        <obj id="title" class="CaptionObject">
+			    <attr>
+				    <left>0</left>
+			        <top>0</top>
+			        <width>father.width</width>
+			        <height>father.height</height>
+					<zorder>-1000</zorder>
+				</attr>
+			</obj>
+			<obj id="close_button" class="Util.float_button">
+			    <attr type="int" name="NowState"/>
+				<attr>
+					<left>father.width-30</left>
+					<top>0</top>
+					<width>24</width>
+					<height>24</height>
+					<zorder>1</zorder>
+					<BkgID>app.close</BkgID>
+					<FloatValue>2</FloatValue>
+				</attr>
+				<eventlist>
+					<event name="OnClick" file="V6MessageBox.lua" func="close_btn_OnClick"/>
+				</eventlist>
+		    </obj>
+			<obj id="message" class="TextObject">
+				<attr>
+					<width>father.width</width>
+					<height>father.height*75/100</height>
+					<halign>center</halign>
+					<valign>center</valign>
+				</attr>
+			</obj>
+			<obj id="OK_button" class="Util.gradual_button">
+				<attr>
+					<left>(father.width-50)/2</left>
+					<top>father.height - 35</top>
+					<width>50</width>
+					<height>25</height>
+					<NormalBkgID>app.button.normal</NormalBkgID>
+					<Text>确定</Text>
+					<Visible>0</Visible>
+				</attr>
+				<eventlist>
+					<event name="OnClick" file="V6MessageBox.lua" func="OK_btn_OnClick"/>
+				</eventlist>
+			</obj>
+			<obj id="Yes_button" class="Util.gradual_button">
+				<attr>
+					<left>50</left>
+					<top>father.height - 35</top>
+					<width>50</width>
+					<height>25</height>
+					<NormalBkgID>app.button.normal</NormalBkgID>
+					<Text>是</Text>
+					<Visible>0</Visible>
+				</attr>
+				<eventlist>
+					<event name="OnClick" file="V6MessageBox.lua" func="Yes_btn_OnClick"/>
+				</eventlist>
+			</obj>
+			<obj id="No_button" class="Util.gradual_button">
+				<attr>
+					<left>father.width - 100</left>
+					<top>father.height - 35</top>
+					<width>50</width>
+					<height>25</height>
+					<NormalBkgID>app.button.normal</NormalBkgID>
+					<Text>否</Text>
+					<Visible>0</Visible>
+				</attr>
+				<eventlist>
+					<event name="OnClick" file="V6MessageBox.lua" func="No_btn_OnClick"/>
+				</eventlist>
+			</obj>
+	    </children>
+	</obj>
+</objtreetemplate>
+	
+<hostwndtemplate id="V6MessageBox.Wnd" class="ModalHostWnd">
+		<attr> 
+			<appwindow>1</appwindow>
+			<title>消息</title>
+			<layered>1</layered>
+			<!--注意这是容器窗口的大小，设置的要合理-->
+			<width>500</width>
+			<height>600</height>
+		</attr>
+		<eventlist>
+		    <event name="OnCreate" file="V6MessageBox.lua" func="Wnd_OnCreate" />
+			<event name="OnShowWindow" file="V6MessageBox.lua" func="Wnd_OnShowWindow" />
+			<event name="OnSize" file="V6MessageBox.lua" func="Wnd_OnSize"/>
+		</eventlist>
+</hostwndtemplate>
+</xlue>

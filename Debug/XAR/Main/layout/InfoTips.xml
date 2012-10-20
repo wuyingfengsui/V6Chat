@@ -1,0 +1,180 @@
+<!--XML最好存储为UTF-8编码-->
+<xlue>
+    <objtemplate id="Main.UserInfo.Tips" class="LayoutObject">
+        <attr>
+        </attr>
+        <children>
+		    <obj id="small_map" class="FillObject">
+			<attr>
+				<width>268</width>
+				<height>100</height>
+				<srccolor>system.white</srccolor>
+				<srcpt>134,50</srcpt>
+				<destcolor>main.tips.bkg</destcolor>
+				<destpt>0,0</destpt>
+				<filltype>Circle</filltype>
+				<alpha>255</alpha>
+				<blendtype>Source</blendtype>
+			</attr>
+			<children>
+		    <obj id="bkg" class="ImageObject">
+			    <attr>
+                    <left>0</left>
+                    <top>0</top>
+                    <width>268</width>
+                    <height>100</height>
+                    <image>main.tree_item.tips</image>
+					<visible>false</visible>
+                </attr>
+				<children>
+				    <obj id="thumbnails" class="ImageObject">
+                        <attr>
+                            <left>10</left>
+                            <top>10</top>
+                            <width>40</width>
+                            <height>50</height>
+                            <image>app.unknown_photo</image>
+							<drawmode>1</drawmode>
+							<visible>false</visible>
+                        </attr>
+                    </obj>
+					<obj id="name" class="TextObject">
+						<attr>
+							<halign>left</halign>
+							<valign>center</valign>
+							<font>font.category.item.big</font>
+							<effect>bright</effect>
+							<effectcolor>main.tip.name.green</effectcolor>
+							<left>100</left>
+							<top>10</top>
+							<width>father.width - 110</width>
+							<height>25</height>
+							<endellipsis>1</endellipsis>
+							<wordellipsis>1</wordellipsis>
+							<visible>false</visible>
+						</attr>		
+					</obj>
+					<!--
+					<obj id="sex" class="TextObject">
+						<attr>
+							<halign>left</halign>
+							<valign>center</valign>
+							<font>font.category.item.small</font>
+							<left>100</left>
+							<top>37</top>
+							<width>father.width - 110</width>
+							<height>15</height>
+							<visible>false</visible>
+						</attr>		
+					</obj>
+					-->
+					<obj id="introduction" class="TextObject">
+						<attr>
+							<halign>left</halign>
+							<font>font.category.item</font>
+							<left>10</left>
+							<top>60</top>
+							<width>father.width - 20</width>
+							<height>father.height - 70</height>
+					        <multiline>1</multiline>
+							<endellipsis>1</endellipsis>
+							<wordellipsis>1</wordellipsis>
+							<visible>false</visible>
+						</attr>		
+					</obj>
+			    </children>
+		    </obj>
+			</children>
+			</obj>
+        </children>
+    </objtemplate>
+	
+	<objtemplate id="Main.GroupInfo.Tips" class="LayoutObject">
+        <attr>
+        </attr>
+        <children>
+		    <obj id="small_map" class="FillObject">
+			<attr>
+				<width>268</width>
+				<height>100</height>
+				<srccolor>system.white</srccolor>
+				<srcpt>134,50</srcpt>
+				<destcolor>main.tips.bkg</destcolor>
+				<destpt>0,0</destpt>
+				<filltype>Circle</filltype>
+				<alpha>255</alpha>
+				<blendtype>Source</blendtype>
+			</attr>
+			<children>
+		    <obj id="bkg" class="ImageObject">
+			    <attr>
+                    <left>0</left>
+                    <top>0</top>
+                    <width>268</width>
+                    <height>100</height>
+                    <image>main.tree_item.tips</image>
+					<visible>false</visible>
+                </attr>
+				<children>
+                    <obj id="name" class="TextObject">
+						<attr>
+							<halign>left</halign>
+							<valign>center</valign>
+							<font>font.category.item.big</font>
+							<effect>bright</effect>
+							<effectcolor>main.tip.name.green</effectcolor>
+							<left>15</left>
+							<top>10</top>
+							<width>father.width - 15</width>
+							<height>25</height>
+							<visible>false</visible>
+						</attr>		
+					</obj>
+					<obj id="owner" class="TextObject">
+						<attr>
+							<halign>left</halign>
+							<valign>center</valign>
+							<font>font.category.item</font>
+							<left>15</left>
+							<top>37</top>
+							<width>father.width - 15</width>
+							<height>15</height>
+							<font>font.category.item.small</font>
+							<visible>false</visible>
+						</attr>		
+					</obj>
+					<obj id="introduction" class="TextObject">
+						<attr>
+							<halign>left</halign>
+							<font>font.category.item</font>
+							<left>15</left>
+							<top>52</top>
+							<width>father.width - 20</width>
+							<height>father.height - 50</height>
+							<multiline>1</multiline>
+							<endellipsis>1</endellipsis>
+							<wordellipsis>1</wordellipsis>
+							<visible>false</visible>
+						</attr>		
+					</obj>
+			    </children>
+		    </obj>
+			</children>
+			</obj>
+        </children>
+    </objtemplate>
+							
+	<hostwndtemplate id="Main.Info.TipsWnd" class="TipsHostWnd">
+	    <attr> 
+            <layered>1</layered>
+            <left>0</left> 
+            <top>0</top>
+            <width>268</width>
+            <height>100</height>
+            <topmost>1</topmost>
+		</attr>
+		<eventlist>
+		    <event name="OnShowWindow" file="InfoTips.xml.lua" func="OnShowWindow" />
+		</eventlist>
+	</hostwndtemplate>
+</xlue>

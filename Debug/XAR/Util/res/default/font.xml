@@ -1,0 +1,17 @@
+﻿<XLUE>
+<resource>
+	<font id="button.default.font" height="11" facename="defaultfont"/>
+	<font id="default.font" height="12" facename="defaultfont" />
+	<font id="font.category.mydownload" height="13" facename="defaultfont"  />
+	<font id="font.category.item.normal" height="12" facename="defaultfont"  />
+	<font id="font.category.item" height="12" facename="defaultfont"  />
+	<font id="font.category.item.small" height="10" facename="defaultfont"  />
+	<font id="font.category.item.big" height="15" facename="defaultfont"  />
+	<font id="font.category.item.bold" weight="bold" height="12" facename="defaultfont"  />
+	<font id="font.category.item.underline" height="12" facename="defaultfont" underline="1" />
+	
+	<font id="font.mainpanel.nick_name" height="20" facename="defaultfont"  />
+	<font id="font.chatpanel.history_time" height="18" facename="defaultfont"  />
+	<font id="font.addfriendwnd.prompt" height="20" facename="defaultfont"  italic="1" />
+</resource>
+</XLUE>

@@ -1,0 +1,6 @@
+<XLUE>
+	<resource>
+	    <pen id="pen.solid" width="2" penstyle="solid" />
+        <pen id="pen.dot" width="2" penstyle="dot" />
+	</resource>
+</XLUE>

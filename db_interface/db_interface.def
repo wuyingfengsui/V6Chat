@@ -1,0 +1,25 @@
+EXPORTS
+	insert_myProfile
+	update_myProfile
+	get_myProfileById
+	get_myProfileByName
+
+	get_peersProfile
+	clear_peersProfile
+	get_peerProfileById
+	insert_peerProfile
+	insert_peersProfile
+	last_insert_peerProfileUid
+	update_peerProfile
+	delete_peerProfile
+
+	get_serversInformation
+	clear_serversInformation
+	insert_serverInformation
+	update_serverInformation
+
+	insert_chatItem
+	get_chatItems
+
+	release_db_data
+	release_indb_table_data

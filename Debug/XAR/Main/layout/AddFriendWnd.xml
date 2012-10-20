@@ -1,0 +1,146 @@
+<!--XML最好存储为UTF-8编码-->
+<xlue>
+    <objtreetemplate id="AddFriend.Tree">
+        <attr>
+			<left>-200</left>
+			<top>-200</top>
+			<width>2000</width>
+			<height>2000</height>
+	    </attr>
+		<obj id="bkg" class="ImageObject">
+			<attr>
+				<left>0</left>
+				<top>0</top>
+				<width>600</width>
+				<height>400</height>
+				<!--资源相关的属性使用资源定义xml中设置的资源名-->
+				<image>main.config.add_friend_wnd_bkg</image>
+				<drawmode>1</drawmode>
+				<alpha>200</alpha>
+			</attr>
+			<children>
+				<obj id="title" class="CaptionObject">
+			        <attr>
+				        <left>0</left>
+			            <top>0</top>
+			            <width>father.width</width>
+			            <height>father.height</height>
+				    </attr>
+			    </obj>
+				<obj id="close_button" class="Util.float_button">
+					<attr type="int" name="NowState"/>
+					<attr>
+						<left>father.width-30</left>
+						<top>5</top>
+						<width>24</width>
+						<height>24</height>
+						<zorder>1</zorder>
+						<BkgID>app.close</BkgID>
+						<FloatValue>2</FloatValue>
+					</attr>
+					<eventlist>
+						<event name="OnClick" file="AddFriendWnd.xml.lua" func="Close_btn_OnClick"/>
+					</eventlist>
+				</obj>
+				<obj id="prompt1" class="TextObject">
+					<attr>
+						<halign>left</halign>
+						<valign>center</valign>
+						<left>30</left>
+						<top>30</top>
+						<width>300</width>
+						<height>40</height>
+						<font>font.addfriendwnd.prompt</font>
+						<textcolor>system.darkorange</textcolor>
+						<text>请选择一种添加的方式：</text>
+					</attr>		
+				</obj>
+				<obj id="prompt2" class="TextObject">
+					<attr>
+						<halign>left</halign>
+						<valign>center</valign>
+						<left>60</left>
+						<top>80</top>
+						<width>300</width>
+						<height>40</height>
+						<font>font.category.item.big</font>
+						<textcolor>system.darkorange</textcolor>
+						<text>如果您知道对方的IP及端口号，您可以</text>
+					</attr>		
+				</obj>
+				<obj id="p2p_button" class="Util.gradual_button">
+					<attr>
+						<left>(father.width - 150)/2</left>
+						<top>120</top>
+						<width>150</width>
+						<height>30</height>
+						<NormalBkgID>app.button.normal</NormalBkgID>
+						<Text>通过IP添加</Text>
+						<FontID>font.category.item.big</FontID>
+					</attr>
+					<eventlist>
+						<event name="OnClick" file="AddFriendWnd.xml.lua" func="p2p_button_OnClick"/>
+					</eventlist>
+				</obj>
+				<obj id="prompt3" class="TextObject">
+					<attr>
+						<halign>left</halign>
+						<valign>center</valign>
+						<left>60</left>
+						<top>200</top>
+						<width>300</width>
+						<height>40</height>
+						<font>font.category.item.big</font>
+						<textcolor>system.darkorange</textcolor>
+						<text>您也可以直接在Internet上搜索你的朋友</text>
+					</attr>		
+				</obj>
+				<obj id="server_button" class="Util.gradual_button">
+					<attr>
+						<left>(father.width - 200)/2</left>
+						<top>240</top>
+						<width>200</width>
+						<height>30</height>
+						<NormalBkgID>app.button.normal</NormalBkgID>
+						<Text>通过服务源添加</Text>
+						<FontID>font.category.item.big</FontID>
+					</attr>
+					<eventlist>
+						<event name="OnClick" file="AddFriendWnd.xml.lua" func="server_button_OnClick"/>
+					</eventlist>
+				</obj>
+				<obj id="P2PPanel" class="Main.P2PAddFriendPanel">
+					<attr>
+						<left>0</left>
+						<top>0</top>
+						<width>father.width</width>
+						<height>father.height</height>
+					</attr>
+				</obj>
+				<obj id="ServerPanel" class="Main.ServerAddFriendPanel">
+					<attr>
+						<left>0</left>
+						<top>0</top>
+						<width>father.width</width>
+						<height>father.height</height>
+					</attr>
+				</obj>
+			</children>
+		</obj>
+    </objtreetemplate>
+	
+	<hostwndtemplate id="AddFriend.Wnd" class="FrameHostWnd">
+		<attr>
+			<appwindow>1</appwindow>
+			<title>添加朋友</title>
+			<layered>1</layered>
+			<width>600</width>
+			<height>400</height>
+			<tabstop>1</tabstop>
+		</attr>
+		<eventlist>
+		    <event name="OnCreate" file="AddFriendWnd.xml.lua" func="OnCreate" />
+			<event name="OnShowWindow" file="AddFriendWnd.xml.lua" func="OnShowWindow" />
+	    </eventlist>
+</hostwndtemplate>
+</xlue>

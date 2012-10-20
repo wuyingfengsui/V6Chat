@@ -1,0 +1,247 @@
+<xlue>
+	<control class="ServersListCtrl">
+		<method_def>
+			<SetSel file="ServersListCtrl.xml.lua" func="List_SetSel" />
+			<GetSel file="ServersListCtrl.xml.lua" func="List_GetSel" />
+			<InsertItem file="ServersListCtrl.xml.lua" func="InsertItem" />
+			<ChangeItemState file="ServersListCtrl.xml.lua" func="ChangeItemState" />
+			<DeleteAllItems file="ServersListCtrl.xml.lua" func="DeleteAllItems" />
+			<DeleteItem file="ServersListCtrl.xml.lua" func="DeleteItem" />
+			<SetAdjust file="ServersListCtrl.xml.lua" func="SetAdjust" />
+			<MouseWheel file="ServersListCtrl.xml.lua" func="MouseWheel" />
+			<UpdateScroll file="ServersListCtrl.xml.lua" func="UpdateScroll" />
+		</method_def>
+		<event_def>
+		    <OnSelected>
+				<param>
+					<int/>
+				</param>
+			</OnSelected>
+			<OnChanged>
+				<param>
+					<int/>
+				</param>
+			</OnChanged>
+		</event_def>
+		<objtemplate>
+            <children>
+				<obj id="list.bkg" class="TextureObject">
+                    <attr>
+                        <left>0</left>
+                        <top>0</top>
+                        <width>father.width</width>
+                        <height>father.height</height>
+                        <texture>texture.edit.bkg.normal</texture>
+						<zorder>1</zorder>
+                    </attr>
+					<children>
+						<obj id="header" class="LayoutObject">
+							<attr>
+								<left>3</left>
+								<top>3</top>
+								<width>father.width-6</width>
+								<height>18</height>
+							</attr>
+							<children>
+								<obj id="Header.Bkg.id" class="ImageObject">
+									<attr>
+										<left>0</left>
+										<top>0</top>
+										<width>father.width</width>
+										<height>father.height</height>
+										<drawmode>1</drawmode>
+										<image>bitmap.listctrl.header.bkg</image>
+									</attr>
+								</obj>
+								<obj id="server_name_prompt" class="TextObject">
+									<attr>
+										<left>10</left>
+										<top>0</top>
+										<width>50</width>
+										<height>father.height</height>
+										<valign>center</valign>
+										<text>名称</text>
+									</attr>
+								</obj>
+								<obj id="introduction_prompt" class="TextObject">
+									<attr>
+										<left>150</left>
+										<top>0</top>
+										<width>100</width>
+										<height>father.height</height>
+										<valign>center</valign>
+										<text>介绍</text>
+									</attr>
+								</obj>
+								<obj id="domain_prompt" class="TextObject">
+									<attr>
+										<left>275</left>
+										<top>0</top>
+										<width>100</width>
+										<height>father.height</height>
+										<valign>center</valign>
+										<text>域名/IP</text>
+									</attr>
+								</obj>
+								<obj id="state_prompt" class="TextObject">
+									<attr>
+										<left>390</left>
+										<top>0</top>
+										<width>50</width>
+										<height>father.height</height>
+										<valign>center</valign>
+										<text>状态</text>
+									</attr>
+								</obj>
+							</children>
+						</obj>
+						<obj id="content" class="LayoutObject">
+							<attr>
+								<left>3</left>
+								<top>21</top>
+								<width>father.width-6</width>
+								<height>father.height-24</height>
+								<limitchild>1</limitchild>
+							</attr>	
+							<eventlist>
+								<event name="OnMouseWheel" file="ServersListCtrl.xml.lua" func="OnMouseWheel" />
+							</eventlist>
+						</obj>
+						<obj id="vscroll" class="Thunder.ScrollBar">
+							<attr>
+								<left>father.width - 26</left>
+								<top>21</top>
+								<width>25</width>
+								<height>father.height-24</height>
+								<Type>1</Type>
+								<ThumbBtn_normal>texture.vsb.small.thumb.normal</ThumbBtn_normal>
+								<ThumbBtn_hover>texture.vsb.small.thumb.hover</ThumbBtn_hover>
+								<ThumbBtn_down>texture.vsb.small.thumb.down</ThumbBtn_down>
+								<LeftBtn_normal>texture.vsb.leftbtn.normal</LeftBtn_normal>
+								<LeftBtn_hover>texture.vsb.leftbtn.hover</LeftBtn_hover>
+								<LeftBtn_down>texture.vsb.leftbtn.down</LeftBtn_down>
+								<RightBtn_normal>texture.vsb.rightbtn.normal</RightBtn_normal>
+								<RightBtn_hover>texture.vsb.rightbtn.hover</RightBtn_hover>
+								<RightBtn_down>texture.vsb.rightbtn.down</RightBtn_down>
+								<SideBtnLength>12</SideBtnLength>
+
+								<PageSize>0</PageSize>
+								<RangeBegin>0</RangeBegin>
+								<RangeEnd>0</RangeEnd>
+								<ScrollPos>0</ScrollPos>
+								<zorder>100000</zorder>
+							</attr>
+							<eventlist>
+								<event name="OnVScroll" file="ServersListCtrl.xml.lua" func="OnVScroll" />
+								<event name="OnScrollBarMouseWheel" file="ServersListCtrl.xml.lua" func="OnScrollBarMouseWheel" />								
+							</eventlist>
+						</obj>
+					</children>
+				</obj>				
+			</children>
+			<eventlist>
+				<event name="OnBind" file="ServersListCtrl.xml.lua" func="OnBind" />
+				<event name="OnInitControl" file="ServersListCtrl.xml.lua" func="List_OnInitControl" />
+				<event name="OnPosChange" file="ServersListCtrl.xml.lua" func="OnPosChange" />
+			</eventlist>
+		</objtemplate>
+	</control>
+	<control class="ServersListItem">
+		<attr_def>
+			<attr name="id" type="int" />
+			<attr name="server_name" type="string" />
+			<attr name="introduction" type="string" />
+			<attr name="domain" type="string" />
+			<attr name="state" type="int" />
+		</attr_def>
+		<method_def>
+			<SetSel file="ServersListCtrl.xml.lua" func="SetSel" />
+		</method_def>
+		<objtemplate>
+			<children>
+				<obj id="item" class="LayoutObject">
+					<attr>
+						<left>0</left>
+						<top>0</top>
+						<width>father.width - 10</width>
+						<height>30</height>
+					</attr>
+					<children>
+						<obj id="background" class="TextureObject">
+							<attr>
+								<left>0</left>
+								<top>0</top>
+								<width>father.width</width>
+								<height>father.height</height>
+								<texture>texture.tasklist.item.bk</texture>
+							</attr>
+							<children>
+								<obj id="server_name" class="TextObject">
+									<attr>
+										<left>0</left>
+										<width>70</width>
+										<height>25</height>
+										<valign>center</valign>
+										<halign>center</halign>
+										<endellipsis>1</endellipsis>
+										<wordellipsis>1</wordellipsis>
+									</attr>
+								</obj>
+								<obj id="introduction" class="TextObject">
+									<attr>
+										<left>75</left>
+										<width>150</width>
+										<height>25</height>
+										<valign>center</valign>
+										<halign>center</halign>
+										<endellipsis>1</endellipsis>
+										<wordellipsis>1</wordellipsis>
+									</attr>
+								</obj>
+								<obj id="domain" class="TextObject">
+									<attr>
+										<left>250</left>
+										<width>100</width>
+										<height>25</height>
+										<valign>center</valign>
+										<halign>center</halign>
+									</attr>
+								</obj>
+								<obj id="state" class="TextObject">
+									<attr>
+										<left>375</left>
+										<width>50</width>
+										<height>25</height>
+										<valign>center</valign>
+										<halign>center</halign>
+									</attr>
+								</obj>
+								<obj id="changeServer_button" class="Util.gradual_button">
+									<attr>
+										<left>450</left>
+										<top>3</top>
+										<width>50</width>
+										<height>25</height>
+										<NormalBkgID>app.button.normal</NormalBkgID>
+										<Text>修改</Text>
+										<FontID>font.category.item.normal</FontID>
+										<Visible>false</Visible>
+									</attr>
+									<eventlist>
+										<event name="OnClick" file="ServersListCtrl.xml.lua" func="changeServer_btn_OnClick"/>
+									</eventlist>
+								</obj>
+							</children>
+						</obj>						
+					</children>
+				</obj>
+			</children>
+			<eventlist>
+				<event name="OnInitControl" file="ServersListCtrl.xml.lua" func="OnInitControl" />
+				<event name="OnLButtonDown" file="ServersListCtrl.xml.lua" func="OnLButtonDown" />
+				<event name="OnLButtonDbClick" file="ServersListCtrl.xml.lua" func="OnLButtonDbClick" />
+				<event name="OnMouseWheel" file="ServersListCtrl.xml.lua" func="OnMouseWheel_Item" />
+			</eventlist>
+		</objtemplate>
+	</control>
+</xlue>

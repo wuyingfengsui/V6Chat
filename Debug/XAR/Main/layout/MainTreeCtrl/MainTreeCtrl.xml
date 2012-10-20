@@ -1,0 +1,268 @@
+<xlue>
+	<control class="MainTreeCtrl">
+        <attr_def></attr_def>
+        <method_def>
+            <InsertItem file="MainTreeCtrl.xml.lua" func="InsertItem" />
+			<SetItemText file="MainTreeCtrl.xml.lua" func="SetItemText" />
+            <InsertItemText file="MainTreeCtrl.xml.lua" func="InsertItemText" />
+			<InsertItemImageText file="MainTreeCtrl.xml.lua" func="InsertItemImageText" />
+            <SetAdjust file="MainTreeCtrl.xml.lua" func="SetAdjust" />
+            <UpdateVScroll file="MainTreeCtrl.xml.lua" func="UpdateVScroll" />
+            <SetHScrollAdjust file="MainTreeCtrl.xml.lua" func="SetHScrollAdjust" />
+            <GetRootItem file="MainTreeCtrl.xml.lua" func="GetRootItem" />
+			<GetChildrenItemCount file="MainTreeCtrl.xml.lua" func="GetChildrenItemCount" />
+			<GetChildItemByIndex file="MainTreeCtrl.xml.lua" func="GetChildItemByIndex" />
+			<GetChildItemByTxt file="MainTreeCtrl.xml.lua" func="GetChildItemByTxt" />
+			<GetChildItemById file="MainTreeCtrl.xml.lua" func="GetChildItemById" />
+			<UpdateChildItem file="MainTreeCtrl.xml.lua" func="UpdateChildItem" />
+			<OffChildItem file="MainTreeCtrl.xml.lua" func="OffChildItem" />
+            <GetSelected file="MainTreeCtrl.xml.lua" func="GetSelected" />
+            <SetSelected file="MainTreeCtrl.xml.lua" func="SetSelected" />
+            <RemoveItem file="MainTreeCtrl.xml.lua" func="RemoveItem" />
+			<SetExpand file="MainTreeCtrl.xml.lua" func="SetExpand" />
+			<EnsureVisible file="MainTreeCtrl.xml.lua" func="EnsureVisible" />		
+			<MouseWheel file="MainTreeCtrl.xml.lua" func="MouseWheel" />		
+        </method_def>
+		<event_def>
+		    <OnSelected>
+				<param>
+					<table/>
+				</param>
+			</OnSelected>
+			<OnHover>
+				<param>
+					<table/>
+					<int/>
+				</param>
+			</OnHover>
+			<OnLeave>
+				<param>
+					<table/>
+				</param>
+			</OnLeave>
+			<OnPopupGroupMenu>
+				<param>
+					<table/>
+				</param>
+			</OnPopupGroupMenu>
+			<OnPopupItemMenu>
+				<param>
+					<table/>
+				</param>
+			</OnPopupItemMenu>
+		</event_def>
+        <objtemplate>
+            <children>
+                <obj id="tree.bkg" class="TextureObject">
+                    <attr>
+                        <left>0</left>
+                        <top>0</top>
+                        <width>father.width</width>
+                        <height>father.height</height>
+                    </attr>
+                    <children>
+                        <obj id="Tree.Content" class="LayoutObject">
+                            <attr>
+                                <left>10</left>
+                                <top>5</top>
+                                <width>father.width - 15</width>
+                                <height>father.height - 5</height>
+                                <limitchild>1</limitchild>
+                            </attr>
+                            <children>
+                                <obj id="Item.Cotent" class="LayoutObject">
+									<attr>
+										<left>0</left>
+										<top>0</top>
+										<width>father.width + 3</width>
+										<height>father.height - 4</height>
+										<limitchild>1</limitchild>
+										<enableinput>true</enableinput>
+									</attr>
+								</obj>
+								<obj id="ItemTestText" class="TextObject">
+									<attr>
+										<halign>left</halign>
+										<valign>center</valign>
+										<font>font.category.item</font>
+										<left>0</left>
+										<top>0</top>
+										<texttype>gdi</texttype>
+										<zorder>100</zorder>
+										<width>0</width>
+										<height>0</height>
+									</attr>		
+								</obj>
+								<obj id="treectrl.vscroll" class="Thunder.ScrollBar">
+									<attr>
+										<Type>1</Type>
+										<ThumbBtn_normal>texture.vsb.small.thumb.normal</ThumbBtn_normal>
+										<ThumbBtn_hover>texture.vsb.small.thumb.hover</ThumbBtn_hover>
+										<ThumbBtn_down>texture.vsb.small.thumb.down</ThumbBtn_down>
+										<LeftBtn_normal>texture.vsb.leftbtn.normal</LeftBtn_normal>
+										<LeftBtn_hover>texture.vsb.leftbtn.hover</LeftBtn_hover>
+										<LeftBtn_down>texture.vsb.leftbtn.down</LeftBtn_down>
+										<RightBtn_normal>texture.vsb.rightbtn.normal</RightBtn_normal>
+										<RightBtn_hover>texture.vsb.rightbtn.hover</RightBtn_hover>
+										<RightBtn_down>texture.vsb.rightbtn.down</RightBtn_down>
+										<SideBtnLength>12</SideBtnLength>
+										<PageSize>0</PageSize>
+										<RangeBegin>0</RangeBegin>
+										<RangeEnd>0</RangeEnd>
+										<ScrollPos>0</ScrollPos>
+										<left>father.width-26</left>
+										<top>0</top>
+										<width>25</width>
+										<height>father.height - 4</height>
+										<zorder>600</zorder>
+										<cursor>IDC_ARROW</cursor>
+									</attr>
+									<eventlist>
+										<event name="OnVScroll" file="MainTreeCtrl.xml.lua" func="TreeCtrl_OnVScroll" />
+										<event name="OnScrollBarMouseWheel" file="MainTreeCtrl.xml.lua" func="OnScrollBarMouseWheel" />		
+									</eventlist>
+								</obj>
+								<!-- <obj id="treectrl.hscroll" class="Thunder.ScrollBar">
+									<attr>
+										<Type>0</Type>
+										<ThumbBtn_normal>texture.hsb.small.thumb.normal</ThumbBtn_normal>
+										<ThumbBtn_hover>texture.hsb.small.thumb.hover</ThumbBtn_hover>
+										<ThumbBtn_down>texture.hsb.small.thumb.down</ThumbBtn_down>
+										<SideBtnLength>0</SideBtnLength>
+										<PageSize>20</PageSize>
+										<RangeBegin>0</RangeBegin>
+										<RangeEnd>100</RangeEnd>
+										<ScrollPos>0</ScrollPos>
+										<Visible>false</Visible>
+										<left>0</left>
+										<top>father.height-10</top>
+										<width>father.width-12</width>
+										<height>10</height>
+										<zorder>600</zorder>
+									</attr>
+									<eventlist>
+										<event name="OnHScroll" file="MainTreeCtrl.xml.lua" func="TreeCtrl_OnHScroll" />
+									</eventlist>
+								</obj> -->
+                            </children>
+                        </obj>  						
+                    </children>
+                </obj>
+				
+			</children>
+            <eventlist>
+                <event name="OnBind" file="MainTreeCtrl.xml.lua" func="OnBind" />
+                <event name="OnInitControl" file="MainTreeCtrl.xml.lua" func="OnInitControl" />	
+				<event name="OnPosChange" file="MainTreeCtrl.xml.lua" func="OnPosChange" />
+            </eventlist>
+        </objtemplate>
+    </control>
+	
+	<control class="MainTreeItem">
+        <method_def>
+			<SetText file="MainTreeCtrl.xml.lua" func="SetText" />
+			<BindAttr file="MainTreeCtrl.xml.lua" func="BindAttr" />
+        </method_def>
+        <objtemplate>
+            <children>
+				<obj id="content" class="TextureObject">
+					<attr>
+						<limitchild>1</limitchild>
+						<alpha>255</alpha>
+						<left>0</left>
+						<top>0</top>
+						<width>father.width</width>
+						<height>50</height>
+					</attr>
+					<children>
+						<obj id="Expand" class="ImageObject">
+							<attr>
+								<left>5</left>
+								<top>6</top>
+								<width>8</width>
+								<height>father.height</height>
+								<drawmode>0</drawmode>
+								<visible>false</visible>
+								<image>bitmap.categorytree.collapse</image>
+							</attr>
+						</obj>
+                        <obj id="HeadImage" class="ImageObject">
+							<attr>
+								<left>15</left>
+								<top>8</top>
+								<width>28</width>
+								<height>father.height-15</height>
+								<drawmode>1</drawmode>
+								<visible>false</visible>
+								<image>app.unknown_photo</image>
+							</attr>
+						</obj>                        
+						<obj id="ItemText" class="TextObject">
+							<attr>
+								<halign>left</halign>
+								<valign>bottom</valign>
+								<font>font.category.item.big</font>
+								<effect>bright</effect>
+								<left>15</left>
+								<top>0</top>
+								<zorder>100</zorder>
+								<width>father.width - 20</width>
+								<height>father.height - 25</height>
+								<endellipsis>1</endellipsis>
+							    <wordellipsis>1</wordellipsis>
+							</attr>		
+						</obj>
+						<obj id="ItemExtText" class="TextObject">
+							<attr>
+								<halign>left</halign>
+								<valign>top</valign>
+								<font>font.category.item.small</font>
+								<textcolor>system.lightblue</textcolor>
+								<left>15</left>
+								<top>father.height - 25</top>
+								<zorder>100</zorder>
+								<width>father.width - 20</width>
+								<height>father.height</height>
+								<endellipsis>1</endellipsis>
+							    <wordellipsis>1</wordellipsis>
+							</attr>		
+						</obj>
+						<obj id="ItemSelect" class="ImageObject">
+							<attr>
+								<limitchild>1</limitchild>
+								<alpha>255</alpha>
+								<left>15</left>
+								<top>0</top>
+								<width>father.width - 20</width>
+								<height>father.height - 5</height>
+								<image>main.tree_item.light</image>
+								<drawmode>1</drawmode>
+							</attr>
+						</obj>
+						<!-- <obj id="ItemSelect" class="TextureObject">
+							<attr>
+								<texture>texture.category.item.select</texture>
+								<limitchild>0</limitchild>
+								<alpha>255</alpha>
+								<left>15</left>
+								<top>0</top>
+								<width>father.width - 12</width>
+								<height>father.height</height>
+								<visible>false</visible>
+							</attr>
+						</obj> -->
+					</children>
+                </obj>
+            </children>
+            <eventlist>
+				<event name="OnMouseMove" file="MainTreeCtrl.xml.lua" func="Item_OnMouseMove" />
+				<event name="OnLButtonDown" file="MainTreeCtrl.xml.lua" func="Item_OnLButtonDown" />
+				<event name="OnRButtonDown" file="MainTreeCtrl.xml.lua" func="Item_OnRButtonDown" />
+				<event name="OnLButtonDbClick" file="MainTreeCtrl.xml.lua" func="Item_OnLButtonDbClick" />
+				<event name="OnMouseHover" file="MainTreeCtrl.xml.lua" func="Item_OnMouseHover" />
+				<event name="OnMouseLeave" file="MainTreeCtrl.xml.lua" func="Item_OnMouseLeave" />
+				<event name="OnMouseWheel" file="MainTreeCtrl.xml.lua" func="Item_OnMouseWheel"/>
+            </eventlist>
+        </objtemplate>
+    </control>
+</xlue>

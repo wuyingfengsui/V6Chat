@@ -1,0 +1,143 @@
+<!--XML最好存储为UTF-8编码-->
+<xlue>
+	<objtemplate id="Main.Message.Tips" class="LayoutObject">
+        <attr>
+        </attr>
+        <children>
+		    <obj id="bkg" class="TextureObject">
+			<attr>
+				<left>0</left>
+				<top>0</top>
+				<width>250</width>
+				<height>150</height>
+				<texture>main.floatpanel.bkg</texture>
+			</attr>
+			<children>
+				<obj id="close_button" class="Util.float_button">
+			        <attr type="int" name="NowState"/>
+				    <attr>
+					    <left>father.width-30</left>
+					    <top>0</top>
+					    <width>24</width>
+					    <height>24</height>
+					    <zorder>1</zorder>
+					    <BkgID>app.close</BkgID>
+					    <FloatValue>2</FloatValue>
+				    </attr>
+				    <eventlist>
+					    <event name="OnClick" file="MessageTipsWnd.xml.lua" func="close_btn_OnClick"/>
+				    </eventlist>
+		        </obj>
+				<obj id="message" class="TextObject">
+					<attr>
+						<halign>left</halign>
+						<valign>center</valign>
+						<font>font.category.item</font>
+						<left>10</left>
+						<top>10</top>
+						<width>father.width - 20</width>
+						<height>father.height - 50</height>
+						<multiline>1</multiline>
+						<visible>false</visible>
+					</attr>		
+				</obj>
+			</children>
+			</obj>
+        </children>
+    </objtemplate>
+	
+    <objtemplate id="Main.MessageWithChoice.Tips" class="LayoutObject">
+        <attr>
+        </attr>
+        <children>
+		    <obj id="bkg" class="TextureObject">
+			<attr>
+				<left>0</left>
+				<top>0</top>
+				<width>250</width>
+				<height>150</height>
+				<texture>main.floatpanel.bkg</texture>
+			</attr>
+			<children>
+				<obj id="close_button" class="Util.float_button">
+			        <attr type="int" name="NowState"/>
+				    <attr>
+					    <left>father.width-30</left>
+					    <top>0</top>
+					    <width>24</width>
+					    <height>24</height>
+					    <zorder>1</zorder>
+					    <BkgID>app.close</BkgID>
+					    <FloatValue>2</FloatValue>
+				    </attr>
+				    <eventlist>
+					    <event name="OnClick" file="MessageTipsWnd.xml.lua" func="close_btn_OnClick"/>
+				    </eventlist>
+		        </obj>
+				<obj id="message" class="TextObject">
+					<attr>
+						<halign>left</halign>
+						<valign>center</valign>
+						<font>font.category.item</font>
+						<left>10</left>
+						<top>10</top>
+						<width>father.width - 20</width>
+						<height>father.height - 50</height>
+						<multiline>1</multiline>
+						<visible>false</visible>
+					</attr>		
+				</obj>
+				<obj id="choice1" class="TextObject">
+					<attr>
+						<halign>left</halign>
+						<valign>center</valign>
+						<font>font.category.item.big</font>
+						<left>10</left>
+						<top>father.height - 30</top>
+						<width>65</width>
+						<height>20</height>
+						<visible>false</visible>
+					</attr>
+                    <eventlist>
+					    <event name="OnMouseMove" file="MessageTipsWnd.xml.lua" func="choice1_OnMouseMove" />
+					    <event name="OnMouseLeave" file="MessageTipsWnd.xml.lua" func="choice1_OnMouseLeave" />
+						<event name="OnLButtonUp" file="MessageTipsWnd.xml.lua" func="choice1_btn_OnLButtonUp" />
+				    </eventlist>					
+				</obj>
+				<obj id="choice2" class="TextObject">
+					<attr>
+						<halign>right</halign>
+						<valign>center</valign>
+						<font>font.category.item.big</font>
+						<left>75</left>
+						<top>father.height - 30</top>
+						<width>father.width - 85</width>
+						<height>20</height>
+						<visible>false</visible>
+					</attr>
+                    <eventlist>
+					    <event name="OnMouseMove" file="MessageTipsWnd.xml.lua" func="choice2_OnMouseMove" />
+					    <event name="OnMouseLeave" file="MessageTipsWnd.xml.lua" func="choice2_OnMouseLeave" />
+						<event name="OnLButtonUp" file="MessageTipsWnd.xml.lua" func="choice2_btn_OnLButtonUp" />
+				    </eventlist>					
+				</obj>
+			</children>
+			</obj>
+        </children>
+    </objtemplate>
+
+	
+	<hostwndtemplate id="Main.Message.TipsWnd" class="TipsHostWnd">
+	    <attr> 
+            <layered>1</layered>
+            <left>0</left> 
+            <top>0</top>
+            <width>250</width>
+            <height>150</height>
+            <topmost>1</topmost>
+		</attr>
+		<eventlist>
+		    <event name="OnShowWindow" file="MessageTipsWnd.xml.lua" func="OnShowWindow" />
+		</eventlist>
+	</hostwndtemplate>
+</xlue>

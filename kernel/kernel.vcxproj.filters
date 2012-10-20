@@ -1,0 +1,211 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="源文件">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="头文件">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="资源文件">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="头文件\Bean">
+      <UniqueIdentifier>{712a1cf0-f9fe-44ca-aee0-238951d1cc13}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\FileList">
+      <UniqueIdentifier>{b28fe86a-5c91-4059-b47d-37614b2a3b0e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\Listener">
+      <UniqueIdentifier>{c62c95af-93a3-486c-bb41-8f2e30cecac2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\Lock">
+      <UniqueIdentifier>{50a06370-01ad-4f63-82ef-f9835dd9d15f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\Sender">
+      <UniqueIdentifier>{edd7c0dc-7e92-4504-97aa-60b3c39ac63c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\Server">
+      <UniqueIdentifier>{4bcbc11a-f794-43da-b64f-79b334a94416}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\UnreadMsg">
+      <UniqueIdentifier>{49cf3852-bbb3-49d1-8b49-b585ecd46c79}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\User">
+      <UniqueIdentifier>{00ae2a9b-0b1e-4e09-b38d-16beac3d7684}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\FileList">
+      <UniqueIdentifier>{d03529b8-8d56-44f7-bcc9-7b966d7ed08c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\Listener">
+      <UniqueIdentifier>{2663ca57-498b-4353-b985-c8870679713d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\User">
+      <UniqueIdentifier>{827fec16-df23-4ef1-822d-50edc09061c0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\UnreadMsg">
+      <UniqueIdentifier>{70eed6d7-3d96-4c2e-8a00-dbb747c93adf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\Server">
+      <UniqueIdentifier>{a19198ed-b957-4f67-aa65-036bb3375ec9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\Sender">
+      <UniqueIdentifier>{138f512d-bbfe-4aaa-a1cb-e2f329d3a22f}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="kernel.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="FileList\RecvFileList.cpp">
+      <Filter>源文件\FileList</Filter>
+    </ClCompile>
+    <ClCompile Include="FileList\SendFileList.cpp">
+      <Filter>源文件\FileList</Filter>
+    </ClCompile>
+    <ClCompile Include="Listener\ClientMsgListener.cpp">
+      <Filter>源文件\Listener</Filter>
+    </ClCompile>
+    <ClCompile Include="Listener\ServerMsgListener.cpp">
+      <Filter>源文件\Listener</Filter>
+    </ClCompile>
+    <ClCompile Include="Sender\ClientMsgSender.cpp">
+      <Filter>源文件\Sender</Filter>
+    </ClCompile>
+    <ClCompile Include="Sender\WaitACKMsgSender.cpp">
+      <Filter>源文件\Sender</Filter>
+    </ClCompile>
+    <ClCompile Include="Server\ServerList.cpp">
+      <Filter>源文件\Server</Filter>
+    </ClCompile>
+    <ClCompile Include="UnreadMsg\UnreadMsgList.cpp">
+      <Filter>源文件\UnreadMsg</Filter>
+    </ClCompile>
+    <ClCompile Include="User\MyInfo.cpp">
+      <Filter>源文件\User</Filter>
+    </ClCompile>
+    <ClCompile Include="User\P2PUserInfo.cpp">
+      <Filter>源文件\User</Filter>
+    </ClCompile>
+    <ClCompile Include="User\ServerUserInfo.cpp">
+      <Filter>源文件\User</Filter>
+    </ClCompile>
+    <ClCompile Include="User\TempUserList.cpp">
+      <Filter>源文件\User</Filter>
+    </ClCompile>
+    <ClCompile Include="User\UserInfo.cpp">
+      <Filter>源文件\User</Filter>
+    </ClCompile>
+    <ClCompile Include="User\UserList.cpp">
+      <Filter>源文件\User</Filter>
+    </ClCompile>
+    <ClCompile Include="LuaV6Chat3App.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="V6Chat3App.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="V6Util.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Server\ServerInfo.cpp">
+      <Filter>源文件\Server</Filter>
+    </ClCompile>
+    <ClCompile Include="Sender\ServerMsgSender.cpp">
+      <Filter>源文件\Sender</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Bean\ChatHistoryItem.h">
+      <Filter>头文件\Bean</Filter>
+    </ClInclude>
+    <ClInclude Include="FileList\RecvFileList.h">
+      <Filter>头文件\FileList</Filter>
+    </ClInclude>
+    <ClInclude Include="FileList\SendFileList.h">
+      <Filter>头文件\FileList</Filter>
+    </ClInclude>
+    <ClInclude Include="Listener\ClientMsgListener.h">
+      <Filter>头文件\Listener</Filter>
+    </ClInclude>
+    <ClInclude Include="Listener\ServerMsgListener.h">
+      <Filter>头文件\Listener</Filter>
+    </ClInclude>
+    <ClInclude Include="Lock\SimpleCriticalSection.h">
+      <Filter>头文件\Lock</Filter>
+    </ClInclude>
+    <ClInclude Include="User\MyInfo.h">
+      <Filter>头文件\User</Filter>
+    </ClInclude>
+    <ClInclude Include="User\P2PUserInfo.h">
+      <Filter>头文件\User</Filter>
+    </ClInclude>
+    <ClInclude Include="User\ServerUserInfo.h">
+      <Filter>头文件\User</Filter>
+    </ClInclude>
+    <ClInclude Include="User\TempUserList.h">
+      <Filter>头文件\User</Filter>
+    </ClInclude>
+    <ClInclude Include="User\UserInfo.h">
+      <Filter>头文件\User</Filter>
+    </ClInclude>
+    <ClInclude Include="User\UserList.h">
+      <Filter>头文件\User</Filter>
+    </ClInclude>
+    <ClInclude Include="UnreadMsg\UnreadMsgList.h">
+      <Filter>头文件\UnreadMsg</Filter>
+    </ClInclude>
+    <ClInclude Include="Server\ServerList.h">
+      <Filter>头文件\Server</Filter>
+    </ClInclude>
+    <ClInclude Include="Sender\ClientMsgSender.h">
+      <Filter>头文件\Sender</Filter>
+    </ClInclude>
+    <ClInclude Include="Sender\WaitACKMsgSender.h">
+      <Filter>头文件\Sender</Filter>
+    </ClInclude>
+    <ClInclude Include="Handle.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="LuaV6Chat3App.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="V6Chat3App.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="V6ChatDef.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="V6Util.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="resource.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Sender\MsgSender.h">
+      <Filter>头文件\Sender</Filter>
+    </ClInclude>
+    <ClInclude Include="Sender\ServerMsgSender.h">
+      <Filter>头文件\Sender</Filter>
+    </ClInclude>
+    <ClInclude Include="Server\ServerInfo.h">
+      <Filter>头文件\Server</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="kernel.rc">
+      <Filter>资源文件</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="V6Chat_Icon.ico">
+      <Filter>资源文件</Filter>
+    </None>
+  </ItemGroup>
+</Project>

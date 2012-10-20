@@ -1,0 +1,74 @@
+<!--XML最好存储为UTF-8编码-->
+<xlue>
+    <control class="Util.text_edit">
+	    <attr_def>
+			<attr name="Text" type="string" />
+			<attr name="TextWidth" type="int" />
+			<attr name="TextColorResId" type="string" />
+			<attr name="Enable" type="bool">
+			    <default>true</default>
+			</attr>
+			<attr name="Password" type="bool" >
+			    <default>false</default>
+			</attr>
+		</attr_def>
+		<method_def>
+			<SetTitle file="TextEdit.lua" func="SetTitle" />
+			<SetTextWidth file="TextEdit.lua" func="SetTextWidth" />
+			<SetTextColorResId file="TextEdit.lua" func="SetTextColorResId" />
+			<SetText file="TextEdit.lua" func="SetText" />
+			<GetText file="TextEdit.lua" func="GetText" />
+			<SetIsNumber file="TextEdit.lua" func="SetIsNumber" />
+			<SetMaxLength file="TextEdit.lua" func="SetMaxLength" />
+		</method_def>
+		<event_def>
+		    <OnTextChanged>
+				<param>
+				</param>
+			</OnTextChanged>
+			<OnEditFocusChange>
+				<param>
+					<bool/>
+				</param>
+			</OnEditFocusChange>
+		</event_def>
+		<objtemplate>
+	        <children>
+		    <!--定义控件时内部子对象的实际id会被控件类型名修饰，不同控件中可以使用相同的子对象id-->
+		        <obj id="text" class="TextObject">
+				    <attr>
+					    <effect>bright</effect>
+						<valign>center</valign>
+					</attr>
+				</obj>
+				<obj id="edit.bkg" class="TextureObject">
+				    <attr>
+			            <texture>texture.edit.bkg.normal</texture>
+			            <alpha>255</alpha>
+		            </attr>
+				    <children>
+					    <obj id="edit" class="EditObject">
+			                <attr>
+				                <left>0</left>
+			                    <top>0</top>
+								<width>father.width</width>
+			                    <height>father.height</height>
+					            <viewinset>0,5,5,0</viewinset>
+					            <transparent>1</transparent>
+				            </attr>
+						    <eventlist>
+						        <event name="OnKeyUp" file="TextEdit.lua" func="edit_OnKeyUp" />
+								<event name="OnFocusChange" file="TextEdit.lua" func="edit_OnFocusChange"/>
+								<event name="OnEnableChange" file="TextEdit.lua" func="edit_OnEnableChange"/>
+						    </eventlist>
+				        </obj>
+				    </children>
+			    </obj>
+			</children>
+			<eventlist>			
+				<event name="OnFocusChange" file="TextEdit.lua" func="OnFocusChange"/>
+				<event name="OnBind" file="TextEdit.lua" func="OnBind" />
+	        </eventlist>
+		</objtemplate>
+	</control>
+</xlue>

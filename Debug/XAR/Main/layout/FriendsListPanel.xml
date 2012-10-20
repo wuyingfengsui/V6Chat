@@ -1,0 +1,51 @@
+<!--XML最好存储为UTF-8编码-->
+<xlue>
+    <objtreetemplate id="Main.Tabs.FriendList">
+	    <attr>
+		    <left>-200</left>
+			<top>-200</top>
+			<width>2000</width>
+			<height>2000</height>
+		</attr>
+		<obj id="white_bkg" class="FillObject">
+			<attr>
+				<width>280</width>
+				<height>300</height>
+				<srccolor>main.tree.bkg</srccolor>
+				<filltype>Monochrome</filltype>
+				<alpha>255</alpha>
+				<blendtype>Source</blendtype>
+			</attr>
+			<children>
+			    <obj id="tree" class="MainTreeCtrl">
+					<attr>
+						<left>5</left>
+						<top>5</top>
+						<width>280 - 10</width>
+						<height>300-10</height>
+					</attr>
+				    <eventlist>
+					    <event name="OnSelected" file="FriendsListPanel.xml.lua" func="tree_OnSelected" />
+						<event name="OnPopupGroupMenu" file="FriendsListPanel.xml.lua" func="tree_OnPopupGroupMenu" />
+						<event name="OnPopupItemMenu" file="FriendsListPanel.xml.lua" func="tree_OnPopupItemMenu" />
+						<event name="OnHover" file="FriendsListPanel.xml.lua" func="tree_OnHover" />
+						<event name="OnLeave" file="FriendsListPanel.xml.lua" func="tree_OnLeave" />
+						<event name="OnInitControl" file="FriendsListPanel.xml.lua" func="tree_OnInitControl" />
+				    </eventlist>
+			    </obj>
+			</children>
+		</obj>
+	</objtreetemplate>
+	
+	<hostwndtemplate id="Main.Tabs.FriendListWnd" class="FrameHostWnd" >
+        <attr>
+			<width>280</width>
+            <height>300</height>
+        </attr>
+		<eventlist>
+			<event name="OnCreate" file="FriendsListPanel.xml.lua" func="wnd_OnCreate" />
+			<event name="OnDestroy" file="FriendsListPanel.xml.lua" func="wnd_OnDestroy" />
+			<event name="OnShowWindow" file="FriendsListPanel.xml.lua" func="wnd_OnShowWindow" />
+		</eventlist>
+    </hostwndtemplate>
+</xlue>

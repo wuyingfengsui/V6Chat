@@ -1,0 +1,97 @@
+<xlue>
+	<control class="SendFileItem">
+		<attr_def>
+			<attr name="id" type="int" />
+			<attr name="state" type="int" />      <!-- 0-传输中 1-下载成功 2-下载失败 -->
+			<attr name="file_name" type="string" />
+			<attr name="file_path" type="string" />
+		</attr_def>
+		<method_def>
+			<SetId file="SendFileItemCtrl.xml.lua" func="SetId" />
+			<GetId file="SendFileItemCtrl.xml.lua" func="GetId" />
+			<SetState file="SendFileItemCtrl.xml.lua" func="SetState" />
+			<SetFileName file="SendFileItemCtrl.xml.lua" func="SetFileName" />
+			<SetFilePath file="SendFileItemCtrl.xml.lua" func="SetFilePath" />
+		</method_def>
+		<objtemplate>
+			<children>
+				<obj id="item" class="LayoutObject">
+					<attr>
+						<left>0</left>
+						<top>0</top>
+						<width>father.width</width>
+						<height>father.height</height>
+					</attr>
+					<children>
+						<obj id="background" class="TextureObject">
+							<attr>
+								<left>0</left>
+								<top>0</top>
+								<width>father.width</width>
+								<height>father.height</height>
+								<texture>texture.tasklist.select_item.bk</texture>
+							</attr>
+							<children>
+								<obj id="icon" class="TextureObject">
+			                        <attr>
+			                            <left>3</left>
+				                        <top>(father.height-40)/2</top>
+				                        <width>38</width>
+				                        <height>42</height>
+					                    <texture>chat.sendfile.hover</texture>
+				                    </attr>
+			                    </obj>
+								<obj id="file_name" class="TextObject">
+									<attr>
+										<left>50</left>
+										<width>father.width-55</width>
+										<height>24</height>
+										<valign>center</valign>
+										<endellipsis>1</endellipsis>
+										<visible>0</visible>
+									</attr>
+								</obj>
+								<obj id="open_file" class="TextObject">
+									<attr>
+										<left>55</left>
+										<top>25</top>
+										<width>65</width>
+										<height>25</height>
+										<font>font.category.item</font>
+										<valign>center</valign>
+									</attr>
+									<eventlist>
+										<event name="OnMouseMove" file="SendFileItemCtrl.xml.lua" func="OnMouseMove" />	
+										<event name="OnMouseLeave" file="SendFileItemCtrl.xml.lua" func="OnMouseLeave" />	
+										<event name="OnLButtonDown" file="SendFileItemCtrl.xml.lua" func="open_file_OnLButtonDown" />
+									</eventlist>
+								</obj>
+								<obj id="open_file_path" class="TextObject">
+									<attr>
+										<left>160</left>
+										<top>25</top>
+										<width>65</width>
+										<height>25</height>
+										<font>font.category.item</font>
+										<text>打开文件夹</text>
+										<valign>center</valign>
+										<visible>0</visible>
+									</attr>
+									<eventlist>
+										<event name="OnMouseMove" file="SendFileItemCtrl.xml.lua" func="OnMouseMove" />	
+										<event name="OnMouseLeave" file="SendFileItemCtrl.xml.lua" func="OnMouseLeave" />
+										<event name="OnLButtonDown" file="SendFileItemCtrl.xml.lua" func="open_file_path_OnLButtonDown" />
+									</eventlist>
+								</obj>
+							</children>
+						</obj>						
+					</children>
+				</obj>
+			</children>
+			<eventlist>
+				<event name="OnInitControl" file="SendFileItemCtrl.xml.lua" func="OnInitControl" />
+				<event name="OnLButtonDbClick" file="SendFileItemCtrl.xml.lua" func="OnLButtonDbClick" />
+			</eventlist>
+		</objtemplate>
+	</control>
+</xlue>

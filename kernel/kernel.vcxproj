@@ -1,0 +1,147 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{863BF6D5-2AF8-4F30-B1D7-459FA67D3D5B}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>kernel</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <IncludePath>C:\Program Files\boltsdk_2003\include;$(IncludePath)</IncludePath>
+    <LibraryPath>.\Lib;C:\Program Files\boltsdk_2003\lib;$(LibraryPath)</LibraryPath>
+    <OutDir>..\Debug\Bin\</OutDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+    <OutDir>..\Release\Bin\</OutDir>
+    <IncludePath>C:\Program Files\boltsdk_2003\include;$(IncludePath)</IncludePath>
+    <LibraryPath>.\Lib;C:\Program Files\boltsdk_2003\lib;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>XLFSIO.lib;XLGraphic.lib;XLLuaRuntime.lib;XLUE.lib;Shlwapi.lib;db_interface.lib;socket_interface.lib;xmpp_interface.lib;json_vc71_libmtd.lib;IPSearcher.lib;jpegd.lib;libpng.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <IgnoreSpecificDefaultLibraries>
+      </IgnoreSpecificDefaultLibraries>
+      <IgnoreAllDefaultLibraries>false</IgnoreAllDefaultLibraries>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_USRDLL;KERNEL_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>XLFSIO.lib;XLGraphic.lib;XLLuaRuntime.lib;XLUE.lib;Shlwapi.lib;db_interface.lib;socket_interface.lib;xmpp_interface.lib;json_vc71_libmt.lib;IPSearcher.lib;jpeg.lib;libpng.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <UACExecutionLevel>RequireAdministrator</UACExecutionLevel>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="FileList\RecvFileList.cpp" />
+    <ClCompile Include="FileList\SendFileList.cpp" />
+    <ClCompile Include="kernel.cpp" />
+    <ClCompile Include="Listener\ClientMsgListener.cpp" />
+    <ClCompile Include="Listener\ServerMsgListener.cpp" />
+    <ClCompile Include="LuaV6Chat3App.cpp" />
+    <ClCompile Include="Sender\ClientMsgSender.cpp" />
+    <ClCompile Include="Sender\ServerMsgSender.cpp" />
+    <ClCompile Include="Sender\WaitACKMsgSender.cpp" />
+    <ClCompile Include="Server\ServerInfo.cpp" />
+    <ClCompile Include="Server\ServerList.cpp" />
+    <ClCompile Include="UnreadMsg\UnreadMsgList.cpp" />
+    <ClCompile Include="User\MyInfo.cpp" />
+    <ClCompile Include="User\P2PUserInfo.cpp" />
+    <ClCompile Include="User\ServerUserInfo.cpp" />
+    <ClCompile Include="User\TempUserList.cpp" />
+    <ClCompile Include="User\UserInfo.cpp" />
+    <ClCompile Include="User\UserList.cpp" />
+    <ClCompile Include="V6Chat3App.cpp" />
+    <ClCompile Include="V6Util.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Bean\ChatHistoryItem.h" />
+    <ClInclude Include="FileList\RecvFileList.h" />
+    <ClInclude Include="FileList\SendFileList.h" />
+    <ClInclude Include="Handle.h" />
+    <ClInclude Include="Listener\ClientMsgListener.h" />
+    <ClInclude Include="Listener\ServerMsgListener.h" />
+    <ClInclude Include="Lock\SimpleCriticalSection.h" />
+    <ClInclude Include="LuaV6Chat3App.h" />
+    <ClInclude Include="resource.h" />
+    <ClInclude Include="Sender\ClientMsgSender.h" />
+    <ClInclude Include="Sender\MsgSender.h" />
+    <ClInclude Include="Sender\ServerMsgSender.h" />
+    <ClInclude Include="Sender\WaitACKMsgSender.h" />
+    <ClInclude Include="Server\ServerInfo.h" />
+    <ClInclude Include="Server\ServerList.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="UnreadMsg\UnreadMsgList.h" />
+    <ClInclude Include="User\MyInfo.h" />
+    <ClInclude Include="User\P2PUserInfo.h" />
+    <ClInclude Include="User\ServerUserInfo.h" />
+    <ClInclude Include="User\TempUserList.h" />
+    <ClInclude Include="User\UserInfo.h" />
+    <ClInclude Include="User\UserList.h" />
+    <ClInclude Include="V6Chat3App.h" />
+    <ClInclude Include="V6ChatDef.h" />
+    <ClInclude Include="V6Util.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="kernel.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="V6Chat_Icon.ico" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

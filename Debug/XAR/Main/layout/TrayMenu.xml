@@ -1,0 +1,54 @@
+<xlue>
+    <objtreetemplate id="TrayMenu.Tree">
+		<attr>
+			<left>-1000</left>
+			<top>-1000</top>
+			<width>2000</width>
+			<height>2000</height>
+		</attr>
+		<obj id="root" class="LayoutObject">
+			<attr>
+				<left>0</left>
+				<top>0</top>
+				<width>100</width>
+				<height>30</height>
+			</attr>
+			<children>
+				<obj id="bkg" class="TextureObject">
+					<attr>
+						<left>0</left>
+						<top>0</top>
+						<width>father.width</width>
+						<height>father.height</height>
+						<texture>texture.MainMenu.bkg</texture>
+					</attr>
+					<children>
+						<obj id="item.Quit" class="Util.Menu.Item">
+							<attr>
+								<left>0</left>
+								<top>0</top>
+								<width>father.width</width>
+								<height>20</height>
+								<Text>退出</Text>
+							</attr>
+							<eventlist>
+								<event name="OnSelected" file="TrayMenu.xml.lua" func="TrayMenu_item_Quit_OnSelected"/>
+							</eventlist>
+						</obj>
+					</children>
+				</obj>
+			</children>
+			<eventlist>
+				<event name="OnInitControl" file="TrayMenu.xml.lua" func="TrayMenu_OnInitControl"/>
+			</eventlist>
+		</obj>
+	</objtreetemplate>
+	
+	<hostwndtemplate id="TrayMenu.Wnd" class="MenuHostWnd">
+		<attr>
+		</attr>
+		<eventlist>
+			<event name="OnPopupMenu" file="TrayMenu.xml.lua" func="OnPopupMenu" />
+		</eventlist>
+	</hostwndtemplate>
+</xlue>

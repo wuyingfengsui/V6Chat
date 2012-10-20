@@ -1,0 +1,50 @@
+<!--XML最好存储为UTF-8编码-->
+<xlue>
+	<control class="Util.head_image">
+		<attr_def>
+		    <attr name="HeadImageID" type="string" >
+				<default>app.unknown_photo</default>
+			</attr>
+			<attr name="NowState" type="int" />
+		</attr_def>
+		<method_def>
+			<SetState file="HeadImage.lua" func="SetState"/>
+			<SetImagePos file="HeadImage.lua" func="SetImagePos"/>
+			<SetHeadImage file="HeadImage.lua" func="SetHeadImage"/>
+		</method_def>
+		<event_def>
+			<OnClick />
+		</event_def>
+		<objtemplate>
+		<children>
+		    <obj id="frame" class="ImageObject">
+			    <attr>
+			        <left>0</left>
+				    <top>0</top>
+				    <width>father.width-1</width>
+				    <height>father.height</height>
+					<image>app.userimage.frame</image>
+					<drawmode>1</drawmode>
+				</attr>
+			</obj>
+			<obj id="my_image" class="ImageObject">
+			    <attr>
+				    <left>5</left>
+				    <top>5</top>
+				    <width>father.width-10</width>
+				    <height>father.height-10</height>
+					<drawmode>1</drawmode>
+					<zorder>100</zorder>
+			    </attr>
+			</obj>
+		</children>
+		<eventlist>
+		    <event name="OnLButtonDown" file="HeadImage.lua" func="OnLButtonDown" />
+			<event name="OnLButtonUp" file="HeadImage.lua" func="OnLButtonUp" />
+		    <event name="OnMouseMove" file="HeadImage.lua" func="OnMouseMove" />	
+		    <event name="OnMouseLeave" file="HeadImage.lua" func="OnMouseLeave" />	
+			<event name="OnBind" file="HeadImage.lua" func="OnBind" />
+		</eventlist>
+		</objtemplate>
+	</control>
+</xlue>
